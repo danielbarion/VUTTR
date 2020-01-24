@@ -1,0 +1,26 @@
+{
+  "name": "vuttr",
+  "version": "0.0.1",
+  "description": "Very Useful Tools to Remember",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielbarion/VUTTR.git"
+  },
+  "keywords": [
+    "VUTTR",
+    "BossaBox",
+    "JS",
+    "JavaScript",
+    "Challenge"
+  ],
+  "author": "Daniel Barion",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielbarion/VUTTR/issues"
+  },
+  "homepage": "https://github.com/danielbarion/VUTTR#readme"
+}
