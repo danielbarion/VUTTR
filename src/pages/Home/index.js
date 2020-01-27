@@ -48,7 +48,12 @@ const HomePage = () => {
         />
       </Head>
 
-      <main className={style.mainContent}>lorem ipsum</main>
+      <main className={style.mainContent}>
+        <h1>VUTTR</h1>
+        <h2>Very Usefull Tools to Remember</h2>
+
+        <div className={style.search}>sad</div>
+      </main>
     </div>
   )
 }
