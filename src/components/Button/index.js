@@ -17,7 +17,6 @@ const Button = ({
   ...rest
 }) => {
   const buttonClassNames = classNames(style.button, style[variant], style[display], {
-    [style.bordered]: bordered,
     [style.disabled]: disabled,
   })
 
@@ -37,16 +36,8 @@ const Button = ({
 Button.propTypes = {
   className: PropTypes.string,
   iconClassName: PropTypes.string,
-  display: PropTypes.oneOf([
-    'standard',
-    'inline',
-    'micro',
-    'extended',
-    'extendedMicro',
-    'circular',
-    'circularMicro',
-  ]),
-  variant: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'negative', 'primaryGradient']),
+  display: PropTypes.oneOf(['neutral', 'success', 'danger']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'quartiary']),
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   onClick: PropTypes.func,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -58,7 +49,7 @@ Button.propTypes = {
 Button.defaultProps = {
   className: null,
   iconClassName: null,
-  display: 'standard',
+  display: 'neutral',
   variant: 'primary',
   label: null,
   type: null,

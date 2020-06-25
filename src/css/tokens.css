@@ -1,15 +1,15 @@
 /* Roboto web font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;900');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700;900&display=swap');
 
 html,
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 @supports (font-variation-settings: normal) {
   html,
   body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
   }
 }
 
@@ -88,24 +88,17 @@ body {
   --vuttr-spacing-xl: 32px;
   --vuttr-spacing-xxl: 64px;
 
+  /***** spacings - special *****/
+  --vuttr-spacing-special-button-top: 14px;
+  --vuttr-spacing-special-button-bottom: 13px;
+  --vuttr-spacing-special-button-horizontal: 26px;
+  --vuttr-spacing-special-button-horizontal-small: 18px;
+
   /* outside shadow */
   --vuttr-shadow-1: 0 4px 8px rgba(0, 0, 0, 0.15);
   --vuttr-shadow-2: 0 8px 24px rgba(0, 0, 0, 0.15);
   --vuttr-shadow-3: 0 16px 32px rgba(0, 0, 0, 0.15);
   --vuttr-shadow-4: 0 32px 64px rgba(0, 0, 0, 0.15);
-
-  /* general sizes */
-  --vuttr-size-field-height: 56px;
-  --vuttr-size-field-select-option-height: 35px;
-  --vuttr-size-standard-button-height: 48px;
-  --vuttr-size-inline-button-height: 32px;
-  --vuttr-size-micro-button-height: 24px;
-  --vuttr-size-extended-button-height: 40px;
-  --vuttr-size-extended-micro-button-height: 28px;
-  --vuttr-size-circular-button: 64px;
-  --vuttr-size-circular-micro-button: 32px;
-  --vuttr-size-header-height: 64px;
-  --vuttr-size-container-width: 1024px;
 
   /* icon sizes */
   --vuttr-size-icon-xs: 16px;
@@ -115,7 +108,7 @@ body {
   --vuttr-size-icon-xl: 40px;
 
   /* fonts */
-  --vuttr-font-family: 'Roboto', sans-serif;
+  --vuttr-font-family: 'Source Sans Pro', sans-serif;
 
   /* font size */
   --vuttr-font-size-xxs: 11px;
@@ -126,6 +119,9 @@ body {
   --vuttr-font-size-xl: 28px;
   --vuttr-font-size-xxl: 43px;
   --vuttr-font-size-xxxl: 64px;
+
+  /***** font size - special *****/
+  --vuttr-font-size-special-button: 18px;
 
   /* font weight */
   --vuttr-font-weight-regular: 400;
@@ -147,8 +143,19 @@ body {
   --vuttr-border-radius-pill: 500px;
   --vuttr-border-radius-circle: 50%;
 
+  /***** border radius - special *****/
+  --vuttr-border-radius-special: 5px;
+
   /* depths */
   --vuttr-depth-base: 1;
   --vuttr-depth-sidebar-nav: 2;
   --vuttr-depth-modal: 3;
+
+  /* general sizes */
+  --vuttr-size-button: 50px;
+  --vuttr-size-button-small: 35px;
+  --vuttr-size-container-width: 1024px;
+
+  /* custom colors */
+  --vuttr-color-green-no-mapped: #0dcb7d;
 }

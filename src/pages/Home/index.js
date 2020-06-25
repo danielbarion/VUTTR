@@ -2,6 +2,7 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 import Head from 'next/head'
 import Container from 'components/Container'
+import Button from 'components/Button'
 import style from './style.module.css'
 
 const HomePage = () => {
@@ -54,6 +55,38 @@ const HomePage = () => {
         <h2>Very Usefull Tools to Remember</h2>
 
         <div className={style.search}>sad</div>
+        <div style={{ display: 'flex' }}>
+          <div>
+            <Button label="This is a button" />
+            <Button label="This is a button" disabled />
+            <Button label="This is a button" variant="secondary" />
+            <Button label="This is a button" variant="secondary" disabled />
+            <Button label="This is a button" variant="tertiary" />
+            <Button label="This is a button" variant="tertiary" disabled />
+            <Button label="This is a button" variant="quartiary" />
+            <Button label="This is a button" variant="quartiary" disabled />
+          </div>
+          <div>
+            <Button label="This is a button" display="success" />
+            <Button label="This is a button" disabled display="success" />
+            <Button label="This is a button" variant="secondary" display="success" />
+            <Button label="This is a button" variant="secondary" disabled display="success" />
+            <Button label="This is a button" variant="tertiary" display="success" />
+            <Button label="This is a button" variant="tertiary" disabled display="success" />
+            <Button label="This is a button" variant="quartiary" display="success" />
+            <Button label="This is a button" variant="quartiary" disabled display="success" />
+          </div>
+          <div>
+            <Button label="This is a button" display="danger" />
+            <Button label="This is a button" disabled display="danger" />
+            <Button label="This is a button" variant="secondary" display="danger" />
+            <Button label="This is a button" variant="secondary" disabled display="danger" />
+            <Button label="This is a button" variant="tertiary" display="danger" />
+            <Button label="This is a button" variant="tertiary" disabled display="danger" />
+            <Button label="This is a button" variant="quartiary" display="danger" />
+            <Button label="This is a button" variant="quartiary" disabled display="danger" />
+          </div>
+        </div>
       </Container>
     </div>
   )
