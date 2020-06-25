@@ -1,0 +1,80 @@
+.typography {
+  line-height: 130%;
+  margin-top: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.displayXXL {
+  font-size: var(--font-size-xxxl);
+  font-weight: var(--font-weight-black);
+}
+
+.displayXL {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-black);
+}
+
+.displayL {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-black);
+}
+
+.displayM {
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-black);
+}
+
+.displayS {
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-black);
+}
+
+.subtitle {
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
+}
+
+.bodyL {
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-regular);
+}
+
+.buttonM {
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-medium);
+}
+
+.bodyM {
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-regular);
+}
+
+.buttonS {
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+}
+
+.bodyS {
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+}
+
+.cardContent {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+.buttonXS {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+.bodyXS {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+}
+
+.buttonXXS {
+  font-size: var(--font-size-xxs);
+  font-weight: var(--font-weight-medium);
+}

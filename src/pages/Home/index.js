@@ -1,6 +1,7 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 import Head from 'next/head'
+import Container from 'components/Container'
 import style from './style.module.css'
 
 const HomePage = () => {
@@ -48,12 +49,12 @@ const HomePage = () => {
         />
       </Head>
 
-      <main className={style.mainContent}>
+      <Container className={style.mainContent} element="main">
         <h1>VUTTR</h1>
         <h2>Very Usefull Tools to Remember</h2>
 
         <div className={style.search}>sad</div>
-      </main>
+      </Container>
     </div>
   )
 }
