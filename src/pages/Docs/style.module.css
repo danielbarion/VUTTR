@@ -1,0 +1,32 @@
+.mainContent {
+  display: flex;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+}
+
+.buttons > div {
+  margin: 8px;
+}
+
+.buttonsColumns {
+  display: grid;
+  grid-gap: 1rem;
+  grid-auto-rows: 50px;
+}
+
+.cards {
+  display: flex;
+}
+
+.cards > div {
+  margin: 8px;
+}
+
+.card {
+  max-width: 300px;
+  text-align: justify;
+  padding: 1rem;
+}

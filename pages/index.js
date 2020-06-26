@@ -1,5 +1,5 @@
 import React from 'react'
-import HomePage from '../src/pages/Home'
+import HomePage from 'pages/Home'
 
 const Home = (props) => <HomePage {...props} />
 
