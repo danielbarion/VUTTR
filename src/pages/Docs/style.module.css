@@ -20,7 +20,7 @@
 
 .icons {
   display: grid;
-  grid-template-rows: 80px 80px 80px 80px 80px;
+  grid-auto-rows: 80px;
 }
 
 .cards {

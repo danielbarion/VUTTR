@@ -143,6 +143,30 @@ const DocsPage = () => {
             <Icon size="xxs" icon="Icon-Paper-Stack-2px" />
             <Icon size="xxxs" icon="Icon-Paper-Stack-2px" />
           </div>
+
+          <div>
+            <Icon size="xxxl" icon="Icon-Journal-2px" />
+            <Icon size="xxl" icon="Icon-Journal-2px" />
+            <Icon size="xl" icon="Icon-Journal-2px" />
+            <Icon size="l" icon="Icon-Journal-2px" />
+            <Icon size="m" icon="Icon-Journal-2px" />
+            <Icon size="s" icon="Icon-Journal-2px" />
+            <Icon size="xs" icon="Icon-Journal-2px" />
+            <Icon size="xxs" icon="Icon-Journal-2px" />
+            <Icon size="xxxs" icon="Icon-Journal-2px" />
+          </div>
+
+          <div>
+            <Icon size="xxxl" icon="Icon-Support-2px" />
+            <Icon size="xxl" icon="Icon-Support-2px" />
+            <Icon size="xl" icon="Icon-Support-2px" />
+            <Icon size="l" icon="Icon-Support-2px" />
+            <Icon size="m" icon="Icon-Support-2px" />
+            <Icon size="s" icon="Icon-Support-2px" />
+            <Icon size="xs" icon="Icon-Support-2px" />
+            <Icon size="xxs" icon="Icon-Support-2px" />
+            <Icon size="xxxs" icon="Icon-Support-2px" />
+          </div>
         </div>
         <div className={style.cards}>
           <Card type="flat" className={style.card}>
