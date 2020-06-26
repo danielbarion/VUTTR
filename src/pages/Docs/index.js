@@ -97,15 +97,15 @@ const DocsPage = () => {
           </div>
 
           <div>
-            <Icon size="xxxl" icon="Exclusion-5" />
-            <Icon size="xxl" icon="Exclusion-5" />
-            <Icon size="xl" icon="Exclusion-5" />
-            <Icon size="l" icon="Exclusion-5" />
-            <Icon size="m" icon="Exclusion-5" />
-            <Icon size="s" icon="Exclusion-5" />
-            <Icon size="xs" icon="Exclusion-5" />
-            <Icon size="xxs" icon="Exclusion-5" />
-            <Icon size="xxxs" icon="Exclusion-5" />
+            <Icon size="xxxl" icon="Icon-Support-2px" />
+            <Icon size="xxl" icon="Icon-Support-2px" />
+            <Icon size="xl" icon="Icon-Support-2px" />
+            <Icon size="l" icon="Icon-Support-2px" />
+            <Icon size="m" icon="Icon-Support-2px" />
+            <Icon size="s" icon="Icon-Support-2px" />
+            <Icon size="xs" icon="Icon-Support-2px" />
+            <Icon size="xxs" icon="Icon-Support-2px" />
+            <Icon size="xxxs" icon="Icon-Support-2px" />
           </div>
 
           <div>
@@ -154,18 +154,6 @@ const DocsPage = () => {
             <Icon size="xs" icon="Icon-Journal-2px" />
             <Icon size="xxs" icon="Icon-Journal-2px" />
             <Icon size="xxxs" icon="Icon-Journal-2px" />
-          </div>
-
-          <div>
-            <Icon size="xxxl" icon="Icon-Support-2px" />
-            <Icon size="xxl" icon="Icon-Support-2px" />
-            <Icon size="xl" icon="Icon-Support-2px" />
-            <Icon size="l" icon="Icon-Support-2px" />
-            <Icon size="m" icon="Icon-Support-2px" />
-            <Icon size="s" icon="Icon-Support-2px" />
-            <Icon size="xs" icon="Icon-Support-2px" />
-            <Icon size="xxs" icon="Icon-Support-2px" />
-            <Icon size="xxxs" icon="Icon-Support-2px" />
           </div>
         </div>
         <div className={style.cards}>
