@@ -108,11 +108,15 @@ body {
   --vuttr-shadow-elevation-4: 0 20px 25px #0000001a;
 
   /* icon sizes */
-  --vuttr-size-icon-xs: 16px;
+  --vuttr-size-icon-xxxs: 10px;
+  --vuttr-size-icon-xxs: 12px;
+  --vuttr-size-icon-xs: 15px;
   --vuttr-size-icon-s: 20px;
-  --vuttr-size-icon-m: 24px;
-  --vuttr-size-icon-l: 32px;
-  --vuttr-size-icon-xl: 40px;
+  --vuttr-size-icon-m: 25px;
+  --vuttr-size-icon-l: 35px;
+  --vuttr-size-icon-xl: 45px;
+  --vuttr-size-icon-xxl: 60px;
+  --vuttr-size-icon-xxxl: 75px;
 
   /* fonts */
   --vuttr-font-family: 'Source Sans Pro', sans-serif;

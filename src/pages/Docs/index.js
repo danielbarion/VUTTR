@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Container from 'components/Container'
 import Button from 'components/Button'
 import Card from 'components/Card'
+import Icon from 'components/Icon'
 import style from './style.module.css'
 
 const DocsPage = () => {
@@ -80,6 +81,67 @@ const DocsPage = () => {
             <Button label="This is a button" variant="tertiary" disabled display="danger" />
             <Button label="This is a button" variant="quartiary" display="danger" />
             <Button label="This is a button" variant="quartiary" disabled display="danger" />
+          </div>
+        </div>
+        <div className={style.icons}>
+          <div>
+            <Icon size="xxxl" icon="Exclusion-2" />
+            <Icon size="xxl" icon="Exclusion-2" />
+            <Icon size="xl" icon="Exclusion-2" />
+            <Icon size="l" icon="Exclusion-2" />
+            <Icon size="m" icon="Exclusion-2" />
+            <Icon size="s" icon="Exclusion-2" />
+            <Icon size="xs" icon="Exclusion-2" />
+            <Icon size="xxs" icon="Exclusion-2" />
+            <Icon size="xxxs" icon="Exclusion-2" />
+          </div>
+
+          <div>
+            <Icon size="xxxl" icon="Exclusion-5" />
+            <Icon size="xxl" icon="Exclusion-5" />
+            <Icon size="xl" icon="Exclusion-5" />
+            <Icon size="l" icon="Exclusion-5" />
+            <Icon size="m" icon="Exclusion-5" />
+            <Icon size="s" icon="Exclusion-5" />
+            <Icon size="xs" icon="Exclusion-5" />
+            <Icon size="xxs" icon="Exclusion-5" />
+            <Icon size="xxxs" icon="Exclusion-5" />
+          </div>
+
+          <div>
+            <Icon size="xxxl" icon="Icon-Happy-2px" />
+            <Icon size="xxl" icon="Icon-Happy-2px" />
+            <Icon size="xl" icon="Icon-Happy-2px" />
+            <Icon size="l" icon="Icon-Happy-2px" />
+            <Icon size="m" icon="Icon-Happy-2px" />
+            <Icon size="s" icon="Icon-Happy-2px" />
+            <Icon size="xs" icon="Icon-Happy-2px" />
+            <Icon size="xxs" icon="Icon-Happy-2px" />
+            <Icon size="xxxs" icon="Icon-Happy-2px" />
+          </div>
+
+          <div>
+            <Icon size="xxxl" icon="Icon-Pie-Chart-2px" />
+            <Icon size="xxl" icon="Icon-Pie-Chart-2px" />
+            <Icon size="xl" icon="Icon-Pie-Chart-2px" />
+            <Icon size="l" icon="Icon-Pie-Chart-2px" />
+            <Icon size="m" icon="Icon-Pie-Chart-2px" />
+            <Icon size="s" icon="Icon-Pie-Chart-2px" />
+            <Icon size="xs" icon="Icon-Pie-Chart-2px" />
+            <Icon size="xxs" icon="Icon-Pie-Chart-2px" />
+            <Icon size="xxxs" icon="Icon-Pie-Chart-2px" />
+          </div>
+
+          <div>
+            <Icon size="xxxl" icon="Icon-Paper-Stack-2px" />
+            <Icon size="xxl" icon="Icon-Paper-Stack-2px" />
+            <Icon size="xl" icon="Icon-Paper-Stack-2px" />
+            <Icon size="l" icon="Icon-Paper-Stack-2px" />
+            <Icon size="m" icon="Icon-Paper-Stack-2px" />
+            <Icon size="s" icon="Icon-Paper-Stack-2px" />
+            <Icon size="xs" icon="Icon-Paper-Stack-2px" />
+            <Icon size="xxs" icon="Icon-Paper-Stack-2px" />
+            <Icon size="xxxs" icon="Icon-Paper-Stack-2px" />
           </div>
         </div>
         <div className={style.cards}>

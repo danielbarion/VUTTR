@@ -8,7 +8,8 @@
     "start": "next start",
     "eslint": "eslint --ext=js --ext=jsx --fix ./src",
     "stylelint": "stylelint \"src/**/*.css\"",
-    "prettier": "prettier --config ./.prettierrc.json --write \"src/**/*{.js,.jsx,.css}\""
+    "prettier": "prettier --config ./.prettierrc.json --write \"src/**/*{.js,.jsx,.css}\"",
+    "generate-icons": "node scripts/generate-icons.js"
   },
   "repository": {
     "type": "git",
