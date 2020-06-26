@@ -100,6 +100,13 @@ body {
   --vuttr-shadow-3: 0 16px 32px rgba(0, 0, 0, 0.15);
   --vuttr-shadow-4: 0 32px 64px rgba(0, 0, 0, 0.15);
 
+  /* cards shadow */
+  --vuttr-shadow-flat: none;
+  --vuttr-shadow-elevation-1: 0 5px 7px #0000000d;
+  --vuttr-shadow-elevation-2: 0 10px 10px #0000000d;
+  --vuttr-shadow-elevation-3: 0 15px 20px #00000012;
+  --vuttr-shadow-elevation-4: 0 20px 25px #0000001a;
+
   /* icon sizes */
   --vuttr-size-icon-xs: 16px;
   --vuttr-size-icon-s: 20px;
@@ -158,4 +165,7 @@ body {
 
   /* custom colors */
   --vuttr-color-green-no-mapped: #0dcb7d;
+
+  /* others */
+  --vuttr-border-card: 1px solid #ebeaed;
 }
