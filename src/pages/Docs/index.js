@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
 import Container from 'components/Container'
 import Button from 'components/Button'
 import Card from 'components/Card'
 import Icon from 'components/Icon'
+import FieldText from 'components/FieldText'
 import style from './style.module.css'
 
 const DocsPage = () => {
@@ -23,6 +24,12 @@ const DocsPage = () => {
     thumbnail: '/static/img/home-seo.png',
     fileFormat: 'image/jpeg',
     sourceOrganization: 'localhost.com',
+  }
+
+  const [value, setValue] = useState('')
+
+  const handleChange = (e) => {
+    setValue(e.target.value)
   }
 
   return (
@@ -154,6 +161,18 @@ const DocsPage = () => {
             <Icon size="xs" icon="Icon-Journal-2px" />
             <Icon size="xxs" icon="Icon-Journal-2px" />
             <Icon size="xxxs" icon="Icon-Journal-2px" />
+          </div>
+        </div>
+        <div className={style.fields}>
+          <div>
+            <FieldText
+              name="name-1"
+              label="Input here"
+              placeholder="Optional..."
+              // hint="Digite seu nome completo"
+              value={value}
+              onChange={handleChange}
+            />
           </div>
         </div>
         <div className={style.cards}>

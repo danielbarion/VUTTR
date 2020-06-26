@@ -1,55 +1,59 @@
 .container {
   position: relative;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--vuttr-spacing-xl);
 }
 
 .field {
   display: flex;
-  height: var(--size-field-height);
+  height: var(--vuttr-size-field);
   position: relative;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .input {
   margin: 0;
   width: 100%;
-  border: 1px solid var(--color-neutral-400);
-  border-radius: var(--border-radius-s);
-  height: var(--size-field-height);
-  padding: 0 var(--spacing-m);
+  border: 1px solid var(--vuttr-color-darkest-white);
+  border-radius: var(--vuttr-border-radius-special);
+  height: var(--vuttr-size-field);
+  padding: var(--vuttr-spacing-special-field-top) var(--vuttr-spacing-special-field-horizontal)
+    var(--vuttr-spacing-special-field-bottom) var(--vuttr-spacing-special-field-horizontal);
   box-sizing: border-box;
   outline: none;
-  background-color: var(--color-white);
+  background-color: var(--vuttr-color-darker-white);
   transition: all 200ms ease;
-  font: var(--font-field-label);
-  color: var(--color-neutral-900);
-  caret-color: var(--color-primary-500);
+  font-size: var(--vuttr-font-size-special-field);
+  font-weight: var(--vuttr-font-weight-regular);
+  color: var(--vuttr-color-ink);
+  caret-color: var(--vuttr-color-lighter-ink);
+  letter-spacing: 0;
 }
 
 .input::-webkit-input-placeholder {
-  color: var(--color-neutral-500);
+  color: var(--vuttr-color-lighter-ink);
 }
 
 .input:-ms-input-placeholder {
-  color: var(--color-neutral-500);
+  color: var(--vuttr-color-lighter-ink);
 }
 
 .input::placeholder {
-  color: var(--color-neutral-500);
+  color: var(--vuttr-color-lighter-ink);
 }
 
 .hasPrefixIcon .input {
-  padding-left: calc(var(--spacing-m) + var(--size-icon-l) + var(--spacing-m));
+  padding-left: calc(var(--vuttr-spacing-m) + var(--size-icon-l) + var(--vuttr-spacing-m));
 }
 
 .hasSufixIcon .input {
-  padding-right: calc(var(--spacing-m) + var(--size-icon-l) + var(--spacing-m));
+  padding-right: calc(var(--vuttr-spacing-m) + var(--size-icon-l) + var(--vuttr-spacing-m));
 }
 
 .prefixIcon,
 .sufixIcon {
   position: absolute;
-  left: var(--spacing-m);
+  left: var(--vuttr-spacing-m);
   display: flex;
   align-self: center;
   fill: var(--color-neutral-600);
@@ -57,7 +61,7 @@
 
 .sufixIcon {
   left: unset;
-  right: var(--spacing-m);
+  right: var(--vuttr-spacing-m);
 }
 
 .iconClickable {
@@ -75,17 +79,16 @@
 }
 
 .label {
-  position: absolute;
-  left: var(--spacing-m);
-  top: 50%;
-  font: var(--font-field-label);
-  transform: translateY(-50%);
-  transition: all 200ms ease;
-  color: var(--color-neutral-600);
+  left: var(--vuttr-spacing-m);
+  color: var(--vuttr-color-ink);
+  font-weight: var(--vuttr-font-weight-semibold);
+  font-size: var(--vuttr-font-size-special-field);
+  padding-bottom: var(--vuttr-spacing-special-field-label);
+  letter-spacing: 0.4px;
 }
 
 .hasPrefixIcon .label {
-  left: calc(var(--spacing-m) + var(--size-icon-l) + var(--spacing-m));
+  left: calc(var(--vuttr-spacing-m) + var(--size-icon-l) + var(--vuttr-spacing-m));
 }
 
 .disabled .label {
@@ -97,7 +100,7 @@
   bottom: 0;
   transform: translateY(100%);
   margin: 0;
-  padding: var(--spacing-xxs) var(--spacing-m) 0;
+  padding: var(--spacing-xxs) var(--vuttr-spacing-m) 0;
   font: var(--font-field-support);
   color: var(--color-neutral-600);
 }
@@ -107,22 +110,20 @@
 }
 
 .focused .input {
-  border-color: var(--color-primary-500);
+  border-color: var(--vuttr-color-most-darkest-white);
+  background-color: var(--vuttr-color-darkest-white);
 }
 
-.hasPlaceholder .label,
-.filled .label,
-.focused .label {
-  font-size: var(--font-size-xs);
-  top: 0;
-  transform: translateY(-50%);
-  padding: 2px;
-  left: calc(var(--spacing-m) - 2px);
-  background-color: var(--color-white);
+.focused .input::-webkit-input-placeholder {
+  color: var(--vuttr-color-light-ink);
 }
 
-.focused .label {
-  color: var(--color-primary-500);
+.focused .input:-ms-input-placeholder {
+  color: var(--vuttr-color-light-ink);
+}
+
+.focused .input::placeholder {
+  color: var(--vuttr-color-light-ink);
 }
 
 .error,

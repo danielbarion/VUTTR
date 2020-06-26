@@ -93,6 +93,10 @@ body {
   --vuttr-spacing-special-button-bottom: 13px;
   --vuttr-spacing-special-button-horizontal: 26px;
   --vuttr-spacing-special-button-horizontal-small: 18px;
+  --vuttr-spacing-special-field-top: 13px;
+  --vuttr-spacing-special-field-bottom: 12px;
+  --vuttr-spacing-special-field-horizontal: 21px;
+  --vuttr-spacing-special-field-label: 20px;
 
   /* outside shadow */
   --vuttr-shadow-1: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -133,6 +137,7 @@ body {
 
   /***** font size - special *****/
   --vuttr-font-size-special-button: 18px;
+  --vuttr-font-size-special-field: 20px;
 
   /* font weight */
   --vuttr-font-weight-regular: 400;
@@ -143,7 +148,6 @@ body {
 
   /* font style */
   --vuttr-font-field-support: var(--font-weight-regular) var(--font-size-xs) var(--font-family);
-  --vuttr-font-field-label: var(--font-weight-regular) var(--font-size-m) var(--font-family);
   --vuttr-font-list-label: var(--font-weight-medium) var(--font-size-m) var(--font-family);
 
   /* border radius */
@@ -163,6 +167,7 @@ body {
   --vuttr-depth-modal: 3;
 
   /* general sizes */
+  --vuttr-size-field: 50px;
   --vuttr-size-button: 50px;
   --vuttr-size-button-small: 35px;
   --vuttr-size-container-width: 1024px;
@@ -171,5 +176,5 @@ body {
   --vuttr-color-green-no-mapped: #0dcb7d;
 
   /* others */
-  --vuttr-border-card: 1px solid #ebeaed;
+  --vuttr-border-card: 1px solid var(--vuttr-color-darkest-white);
 }

@@ -82,6 +82,14 @@ class FieldText extends React.Component {
               onClick={onPrefixIconClick}
             />
           ) : null}
+
+          {label && (
+            <span className={style.label}>
+              {label}
+              {required ? '*' : null}
+            </span>
+          )}
+
           <input
             className={style.input}
             id={`field-${name}`}
@@ -98,12 +106,6 @@ class FieldText extends React.Component {
             onBlur={this.handleBlur}
           />
 
-          {label && (
-            <span className={style.label}>
-              {label}
-              {required ? '*' : null}
-            </span>
-          )}
           {hasSufixIcon ? (
             <Icon
               size="l"
