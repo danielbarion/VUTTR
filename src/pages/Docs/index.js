@@ -173,6 +173,32 @@ const DocsPage = () => {
               value={value}
               onChange={handleChange}
             />
+            <FieldText
+              name="name-2"
+              label="Input here"
+              placeholder="Optional..."
+              // hint="Digite seu nome completo"
+              value={value}
+              onChange={handleChange}
+              required
+            />
+            <FieldText
+              name="name-3"
+              label="Input here"
+              placeholder="Optional..."
+              error="Error message comes here"
+              value={value}
+              onChange={handleChange}
+            />
+            <FieldText
+              name="name-4"
+              label="Input here"
+              placeholder="Optional..."
+              error="Error message comes here"
+              value={value}
+              onChange={handleChange}
+              required
+            />
           </div>
         </div>
         <div className={style.cards}>

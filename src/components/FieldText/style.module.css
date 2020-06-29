@@ -1,14 +1,17 @@
 .container {
   position: relative;
-  margin-bottom: var(--vuttr-spacing-xl);
+  padding-bottom: var(--vuttr-spacing-l);
 }
 
 .field {
   display: flex;
-  height: var(--vuttr-size-field);
   position: relative;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.field.hasLabel {
+  height: calc(var(--vuttr-size-field) + var(--vuttr-spacing-special-field-label));
 }
 
 .input {
@@ -79,12 +82,20 @@
 }
 
 .label {
+  display: flex;
+  align-items: center;
   left: var(--vuttr-spacing-m);
   color: var(--vuttr-color-ink);
   font-weight: var(--vuttr-font-weight-semibold);
   font-size: var(--vuttr-font-size-special-field);
   padding-bottom: var(--vuttr-spacing-special-field-label);
   letter-spacing: 0.4px;
+}
+
+.required {
+  color: var(--vuttr-color-light-ink);
+  height: var(--vuttr-size-field-required);
+  padding-left: var(--vuttr-spacing-s);
 }
 
 .hasPrefixIcon .label {
@@ -98,15 +109,21 @@
 .supportText {
   position: absolute;
   bottom: 0;
-  transform: translateY(100%);
+  right: 0;
   margin: 0;
-  padding: var(--spacing-xxs) var(--vuttr-spacing-m) 0;
   font: var(--font-field-support);
   color: var(--color-neutral-600);
+  letter-spacing: 0.36px;
+  font-size: var(--vuttr-font-size-special-field-support-text);
 }
 
 .disabled .supportText {
   color: var(--color-neutral-300);
+}
+
+.error .input {
+  background-color: var(--vuttr-color-most-lightest-red);
+  color: var(--vuttr-color-red);
 }
 
 .focused .input {
@@ -128,11 +145,11 @@
 
 .error,
 .error .supportText,
-.error .field .label {
-  color: var(--color-danger-500);
+.error .required {
+  color: var(--vuttr-color-red);
 }
 
 .error .field .input {
-  border-color: var(--color-danger-500);
-  caret-color: var(--color-danger-500);
+  border-color: var(--vuttr-color-red);
+  caret-color: var(--vuttr-color-red);
 }

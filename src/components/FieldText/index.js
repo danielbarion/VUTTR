@@ -39,7 +39,6 @@ class FieldText extends React.Component {
       placeholder,
       name,
       type,
-      hint,
       disabled,
       readOnly,
       required,
@@ -66,6 +65,7 @@ class FieldText extends React.Component {
       [style.disabled]: Boolean(disabled),
       [style.hasPrefixIcon]: hasPrefixIcon,
       [style.hasSufixIcon]: hasSufixIcon,
+      [style.hasLabel]: Boolean(label),
     })
 
     return (
@@ -86,7 +86,7 @@ class FieldText extends React.Component {
           {label && (
             <span className={style.label}>
               {label}
-              {required ? '*' : null}
+              {required ? <span className={style.required}>*</span> : null}
             </span>
           )}
 
@@ -119,7 +119,7 @@ class FieldText extends React.Component {
           ) : null}
         </label>
 
-        <p className={style.supportText}>{error || hint}</p>
+        <p className={style.supportText}>{error}</p>
       </div>
     )
   }
@@ -132,7 +132,6 @@ FieldText.propTypes = {
   label: PropTypes.string,
   placeholder: PropTypes.string,
   name: PropTypes.string.isRequired,
-  hint: PropTypes.string,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
   required: PropTypes.bool,
@@ -155,7 +154,6 @@ FieldText.defaultProps = {
   type: 'text',
   label: '',
   placeholder: '',
-  hint: null,
   disabled: false,
   readOnly: false,
   required: false,
