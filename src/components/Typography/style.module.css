@@ -1,80 +1,45 @@
 .typography {
-  line-height: 130%;
-  margin-top: 0;
-  font-family: 'Inter', sans-serif;
+  color: var(--vuttr-color-ink);
 }
 
-.displayXXL {
-  font-size: var(--font-size-xxxl);
-  font-weight: var(--font-weight-black);
+.header1 {
+  font-size: var(--vuttr-font-size-special-xxxl);
+  font-weight: var(--vuttr-font-weight-semibold);
+  letter-spacing: 0.84px;
 }
 
-.displayXL {
-  font-size: var(--font-size-xxl);
-  font-weight: var(--font-weight-black);
+.header2 {
+  font-size: var(--vuttr-font-size-special-xxl);
+  font-weight: var(--vuttr-font-weight-semibold);
+  letter-spacing: 0.72px;
 }
 
-.displayL {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-black);
+.header3 {
+  font-size: var(--vuttr-font-size-special-xl);
+  font-weight: var(--vuttr-font-weight-semibold);
+  letter-spacing: 0.6px;
 }
 
-.displayM {
-  font-size: var(--font-size-l);
-  font-weight: var(--font-weight-black);
+.header4 {
+  font-size: var(--vuttr-font-size-special-l);
+  font-weight: var(--vuttr-font-weight-semibold);
+  letter-spacing: 0.52px;
 }
 
-.displayS {
-  font-size: var(--font-size-s);
-  font-weight: var(--font-weight-black);
+.header5 {
+  font-size: var(--vuttr-font-size-special-m);
+  font-weight: var(--vuttr-font-weight-semibold);
+  letter-spacing: 0.48px;
 }
 
-.subtitle {
-  font-size: var(--font-size-s);
-  font-weight: var(--font-weight-medium);
-}
-
-.bodyL {
-  font-size: var(--font-size-l);
-  font-weight: var(--font-weight-regular);
-}
-
-.buttonM {
-  font-size: var(--font-size-m);
-  font-weight: var(--font-weight-medium);
-}
-
-.bodyM {
-  font-size: var(--font-size-m);
-  font-weight: var(--font-weight-regular);
-}
-
-.buttonS {
-  font-size: var(--font-size-s);
-  font-weight: var(--font-weight-regular);
+.body {
+  font-size: var(--vuttr-font-size-special-s);
+  font-weight: var(--vuttr-font-weight-regular);
+  letter-spacing: 0.4px;
 }
 
 .bodyS {
-  font-size: var(--font-size-s);
-  font-weight: var(--font-weight-regular);
-}
-
-.cardContent {
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-bold);
-}
-
-.buttonXS {
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-}
-
-.bodyXS {
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-regular);
-}
-
-.buttonXXS {
-  font-size: var(--font-size-xxs);
-  font-weight: var(--font-weight-medium);
+  font-size: var(--vuttr-font-size-special-xs);
+  font-weight: var(--vuttr-font-weight-regular);
+  letter-spacing: 0.36px;
 }

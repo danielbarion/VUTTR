@@ -2,6 +2,7 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 import Head from 'next/head'
 import Container from 'components/Container'
+import Typography from 'components/Typography'
 import style from './style.module.css'
 
 const HomePage = () => {
@@ -14,13 +15,11 @@ const HomePage = () => {
 
   const scheme = {
     '@context': 'http://schema.org',
-    '@type': 'ImageObject',
+    '@type': 'SoftwareApplication',
     name: title,
     description:
       "Very Usefull Tools to Remember, don't waste your time thinking, just write down the tool! Come See!",
-    contentUrl: '/static/img/home-seo.png',
-    thumbnail: '/static/img/home-seo.png',
-    fileFormat: 'image/jpeg',
+    applicationCategory: 'Multimedia',
     sourceOrganization: 'localhost.com',
   }
 
@@ -50,12 +49,9 @@ const HomePage = () => {
       </Head>
 
       <Container className={style.mainContent} element="main">
-        <h1>VUTTR</h1>
-        <h2>Very Usefull Tools to Remember</h2>
-
-        <div className={style.search}>sad</div>
-        <div style={{ display: 'flex' }}>
-          <div>{/* <FieldText name="field" value="Top meu" onChange={() => {}} /> */}</div>
+        <div className={style.header}>
+          <Typography variant="header1">VUTTR</Typography>
+          <Typography variant="header2">Very Usefull Tools to Remember</Typography>
         </div>
       </Container>
     </div>

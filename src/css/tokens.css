@@ -139,6 +139,13 @@ body {
   --vuttr-font-size-special-button: 18px;
   --vuttr-font-size-special-field: 20px;
   --vuttr-font-size-special-field-support-text: 18px;
+  --vuttr-font-size-special-xs: 18px;
+  --vuttr-font-size-special-s: 20px;
+  --vuttr-font-size-special-m: 24px;
+  --vuttr-font-size-special-l: 26px;
+  --vuttr-font-size-special-xl: 30px;
+  --vuttr-font-size-special-xxl: 36px;
+  --vuttr-font-size-special-xxxl: 42px;
 
   /* font weight */
   --vuttr-font-weight-regular: 400;
