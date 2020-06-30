@@ -43,3 +43,9 @@
   font-weight: var(--vuttr-font-weight-regular);
   letter-spacing: 0.36px;
 }
+
+.bodyXS {
+  font-size: var(--vuttr-font-size-special-xxs);
+  font-weight: var(--vuttr-font-weight-regular);
+  letter-spacing: 0.32px;
+}

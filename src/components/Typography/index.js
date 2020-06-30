@@ -14,6 +14,7 @@ const Typography = ({ className, children, innerHTML, variant, element }) => {
     header5: 'h5',
     body: 'h6',
     bodyS: 'p',
+    bodyXS: 'p',
   }
 
   const TypographyElement = element || elementMap[variant]
@@ -41,6 +42,7 @@ Typography.propTypes = {
     'header5',
     'body',
     'bodyS',
+    'bodyXS',
   ]),
   innerHTML: PropTypes.string,
   children: PropTypes.oneOfType([
