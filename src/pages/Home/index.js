@@ -1,11 +1,12 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import Head from 'next/head'
 import Container from 'components/Container'
 import Typography from 'components/Typography'
+import Card from 'components/Card'
 import style from './style.module.css'
 
-const HomePage = () => {
+const HomePage = ({ toolsList }) => {
   const title = 'Very Usefull Tools to Remember - VUTTR'
   const metaDescription =
     "Very Usefull Tools to Remember, don't waste your time thinking, just write down the tool! Come See!"
@@ -52,10 +53,28 @@ const HomePage = () => {
         <div className={style.header}>
           <Typography variant="header1">VUTTR</Typography>
           <Typography variant="header2">Very Usefull Tools to Remember</Typography>
+
+          {toolsList.length && toolsList.map((item) => <Card key={item.id}>{item.title}</Card>)}
         </div>
       </Container>
     </div>
   )
+}
+
+HomePage.propTypes = {
+  toolsList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      link: PropTypes.string,
+      tags: PropTypes.arrayOf(PropTypes.string),
+    }),
+  ),
+}
+
+HomePage.defaultProps = {
+  toolsList: [],
 }
 
 export default HomePage

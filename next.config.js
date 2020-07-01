@@ -1,7 +1,4 @@
 const withCSS = require('@zeit/next-css')
-const dotEnv = require('dotenv-flow')
-
-dotEnv.config()
 
 module.exports = withCSS({
   cssModules: true,

@@ -180,7 +180,7 @@ body {
   --vuttr-size-field-required: 10px;
   --vuttr-size-button: 50px;
   --vuttr-size-button-small: 35px;
-  --vuttr-size-container-width: 1024px;
+  --vuttr-size-container-width: 800px;
 
   /* custom colors */
   --vuttr-color-green-no-mapped: #0dcb7d;
