@@ -6,7 +6,9 @@ import style from './style.module.css'
 
 const Header = ({ className }) => (
   <div className={classNames(style.header, className)}>
-    <Typography variant="header1">VUTTR</Typography>
+    <Typography variant="header1" className={style.title}>
+      VUTTR
+    </Typography>
     <Typography variant="header2">Very Usefull Tools to Remember</Typography>
   </div>
 )

@@ -50,7 +50,7 @@ const HomePage = ({ toolsList }) => {
       </Head>
 
       <Container className={style.mainContent} element="main">
-        <Header />
+        <Header className={style.header} />
         <CardsList toolsList={toolsList} />
       </Container>
     </div>

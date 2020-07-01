@@ -2,3 +2,8 @@
   display: flex;
   flex-direction: column;
 }
+
+.header {
+  padding-top: calc(var(--vuttr-spacing-xxl) + var(--vuttr-spacing-xl));
+  margin-bottom: var(--vuttr-spacing-xl);
+}

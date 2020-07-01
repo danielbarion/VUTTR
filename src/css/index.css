@@ -1,3 +1,7 @@
+body {
+  background-color: var(--vuttr-color-dark-white);
+}
+
 a {
   text-decoration: none;
 }

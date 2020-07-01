@@ -10,11 +10,17 @@ const CardsList = ({ className, toolsList }) => (
     {toolsList.length &&
       toolsList.map((item) => (
         <Card key={item.id} className={style.toolCard} type="1">
-          <Typography variant="header4">{item.title}</Typography>
-          <Typography variant="bodyS">{item.description}</Typography>
+          <Typography variant="header4" className={style.title}>
+            {item.title}
+          </Typography>
+          <Typography variant="bodyS" className={style.description}>
+            {item.description}
+          </Typography>
           <div className={style.tags}>
             {item.tags.map((tag) => (
-              <Typography key={tag} variant="bodyXS" element="span">{`#${tag}`}</Typography>
+              <Typography key={tag} variant="bodyXS" element="span" className={style.tag}>
+                {`#${tag}`}
+              </Typography>
             ))}
           </div>
         </Card>
