@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
+import Header from 'components/Header'
 import Container from 'components/Container'
-import Typography from 'components/Typography'
-import Card from 'components/Card'
+import CardsList from 'components/CardsList'
 import style from './style.module.css'
 
 const HomePage = ({ toolsList }) => {
@@ -50,12 +50,8 @@ const HomePage = ({ toolsList }) => {
       </Head>
 
       <Container className={style.mainContent} element="main">
-        <div className={style.header}>
-          <Typography variant="header1">VUTTR</Typography>
-          <Typography variant="header2">Very Usefull Tools to Remember</Typography>
-
-          {toolsList.length && toolsList.map((item) => <Card key={item.id}>{item.title}</Card>)}
-        </div>
+        <Header />
+        <CardsList toolsList={toolsList} />
       </Container>
     </div>
   )
