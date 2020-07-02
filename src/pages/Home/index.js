@@ -61,13 +61,11 @@ const HomePage = ({ toolsList }) => {
 
         <FieldText
           name="name-1"
-          label="Nome"
           hint="Digite seu nome completo"
           value={value}
           onChange={handleChange}
           prefixIcon="Icon-Search-2px"
           sufixIcon="Icon-Search-2px"
-          required
         />
 
         <CardsList toolsList={toolsList} />

@@ -56,7 +56,6 @@
 .prefixIcon,
 .sufixIcon {
   position: absolute;
-  top: calc(var(--vuttr-spacing-xl) + var(--vuttr-spacing-m));
   left: var(--vuttr-spacing-m);
   display: flex;
   align-self: center;
@@ -100,9 +99,10 @@
   padding-left: var(--vuttr-spacing-s);
 }
 
-/* .hasPrefixIcon .label {
-  left: calc(var(--vuttr-spacing-m) + var(--size-icon-l) + var(--vuttr-spacing-m));
-} */
+.hasLabel .prefixIcon,
+.hasLabel .sufixIcon {
+  top: calc(var(--vuttr-spacing-xl) + var(--vuttr-spacing-m));
+}
 
 .disabled .label {
   color: var(--vuttr-color-lighter-ink);
