@@ -46,20 +46,22 @@
 }
 
 .hasPrefixIcon .input {
-  padding-left: calc(var(--vuttr-spacing-m) + var(--size-icon-l) + var(--vuttr-spacing-m));
+  padding-left: calc(var(--vuttr-spacing-xl) + var(--vuttr-spacing-s));
 }
 
 .hasSufixIcon .input {
-  padding-right: calc(var(--vuttr-spacing-m) + var(--size-icon-l) + var(--vuttr-spacing-m));
+  padding-right: calc(var(--vuttr-spacing-xl) + var(--vuttr-spacing-s));
 }
 
 .prefixIcon,
 .sufixIcon {
   position: absolute;
+  top: calc(var(--vuttr-spacing-xl) + var(--vuttr-spacing-m));
   left: var(--vuttr-spacing-m);
   display: flex;
   align-self: center;
-  fill: var(--color-neutral-600);
+  fill: var(--vuttr-color-light-ink);
+  width: var(--vuttr-spacing-m);
 }
 
 .sufixIcon {
@@ -73,11 +75,11 @@
 
 .disabled .prefixIcon,
 .disabled .sufixIcon {
-  fill: var(--color-neutral-300);
+  fill: var(--vuttr-color-lighter-ink);
 }
 
 .disabled .input {
-  color: var(--color-neutral-300);
+  color: var(--vuttr-color-lighter-ink);
   border-color: var(--color-neutral-200);
 }
 
@@ -98,12 +100,12 @@
   padding-left: var(--vuttr-spacing-s);
 }
 
-.hasPrefixIcon .label {
+/* .hasPrefixIcon .label {
   left: calc(var(--vuttr-spacing-m) + var(--size-icon-l) + var(--vuttr-spacing-m));
-}
+} */
 
 .disabled .label {
-  color: var(--color-neutral-300);
+  color: var(--vuttr-color-lighter-ink);
 }
 
 .supportText {
@@ -112,13 +114,13 @@
   right: 0;
   margin: 0;
   font: var(--font-field-support);
-  color: var(--color-neutral-600);
+  color: var(--vuttr-color-light-ink);
   letter-spacing: 0.36px;
   font-size: var(--vuttr-font-size-special-field-support-text);
 }
 
 .disabled .supportText {
-  color: var(--color-neutral-300);
+  color: var(--vuttr-color-lighter-ink);
 }
 
 .error .input {
