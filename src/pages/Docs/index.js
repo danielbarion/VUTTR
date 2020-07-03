@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
-import Container from 'components/Container'
 import Button from 'components/Button'
 import Card from 'components/Card'
-import Icon from 'components/Icon'
+import Container from 'components/Container'
 import FieldText from 'components/FieldText'
+import Icon from 'components/Icon'
 import style from './style.module.css'
 
 const DocsPage = () => {
@@ -68,6 +68,15 @@ const DocsPage = () => {
             <Button label="This is a button" variant="tertiary" disabled />
             <Button label="This is a button" variant="quartiary" />
             <Button label="This is a button" variant="quartiary" disabled />
+
+            <Button label="This is a button" icon="Icon-Search-2px" />
+            <Button label="This is a button" disabled icon="Icon-Search-2px" />
+            <Button label="This is a button" variant="secondary" icon="Icon-Search-2px" />
+            <Button label="This is a button" variant="secondary" disabled icon="Icon-Search-2px" />
+            <Button label="This is a button" variant="tertiary" icon="Icon-Search-2px" />
+            <Button label="This is a button" variant="tertiary" disabled icon="Icon-Search-2px" />
+            <Button label="This is a button" variant="quartiary" icon="Icon-Search-2px" />
+            <Button label="This is a button" variant="quartiary" disabled icon="Icon-Search-2px" />
           </div>
           <div className={style.buttonsColumns}>
             <Button label="This is a button" display="success" />
@@ -78,6 +87,48 @@ const DocsPage = () => {
             <Button label="This is a button" variant="tertiary" disabled display="success" />
             <Button label="This is a button" variant="quartiary" display="success" />
             <Button label="This is a button" variant="quartiary" disabled display="success" />
+
+            <Button label="This is a button" display="success" icon="Icon-Search-2px" />
+            <Button label="This is a button" disabled display="success" icon="Icon-Search-2px" />
+            <Button
+              label="This is a button"
+              variant="secondary"
+              display="success"
+              icon="Icon-Search-2px"
+            />
+            <Button
+              label="This is a button"
+              variant="secondary"
+              disabled
+              display="success"
+              icon="Icon-Search-2px"
+            />
+            <Button
+              label="This is a button"
+              variant="tertiary"
+              display="success"
+              icon="Icon-Search-2px"
+            />
+            <Button
+              label="This is a button"
+              variant="tertiary"
+              disabled
+              display="success"
+              icon="Icon-Search-2px"
+            />
+            <Button
+              label="This is a button"
+              variant="quartiary"
+              display="success"
+              icon="Icon-Search-2px"
+            />
+            <Button
+              label="This is a button"
+              variant="quartiary"
+              disabled
+              display="success"
+              icon="Icon-Search-2px"
+            />
           </div>
           <div className={style.buttonsColumns}>
             <Button label="This is a button" display="danger" />
@@ -88,6 +139,48 @@ const DocsPage = () => {
             <Button label="This is a button" variant="tertiary" disabled display="danger" />
             <Button label="This is a button" variant="quartiary" display="danger" />
             <Button label="This is a button" variant="quartiary" disabled display="danger" />
+
+            <Button label="This is a button" display="danger" icon="Icon-Search-2px" />
+            <Button label="This is a button" disabled display="danger" icon="Icon-Search-2px" />
+            <Button
+              label="This is a button"
+              variant="secondary"
+              display="danger"
+              icon="Icon-Search-2px"
+            />
+            <Button
+              label="This is a button"
+              variant="secondary"
+              disabled
+              display="danger"
+              icon="Icon-Search-2px"
+            />
+            <Button
+              label="This is a button"
+              variant="tertiary"
+              display="danger"
+              icon="Icon-Search-2px"
+            />
+            <Button
+              label="This is a button"
+              variant="tertiary"
+              disabled
+              display="danger"
+              icon="Icon-Search-2px"
+            />
+            <Button
+              label="This is a button"
+              variant="quartiary"
+              display="danger"
+              icon="Icon-Search-2px"
+            />
+            <Button
+              label="This is a button"
+              variant="quartiary"
+              disabled
+              display="danger"
+              icon="Icon-Search-2px"
+            />
           </div>
         </div>
         <div className={style.icons}>
@@ -197,6 +290,44 @@ const DocsPage = () => {
               error="Error message comes here"
               value={value}
               onChange={handleChange}
+              required
+            />
+            <FieldText
+              name="name-1"
+              label="Input here"
+              placeholder="Optional..."
+              // hint="Digite seu nome completo"
+              value={value}
+              onChange={handleChange}
+              prefixIcon="Icon-Search-2px"
+            />
+            <FieldText
+              name="name-2"
+              label="Input here"
+              placeholder="Optional..."
+              // hint="Digite seu nome completo"
+              value={value}
+              onChange={handleChange}
+              prefixIcon="Icon-Search-2px"
+              required
+            />
+            <FieldText
+              name="name-3"
+              label="Input here"
+              placeholder="Optional..."
+              error="Error message comes here"
+              value={value}
+              onChange={handleChange}
+              prefixIcon="Icon-Search-2px"
+            />
+            <FieldText
+              name="name-4"
+              label="Input here"
+              placeholder="Optional..."
+              error="Error message comes here"
+              value={value}
+              onChange={handleChange}
+              prefixIcon="Icon-Search-2px"
               required
             />
           </div>

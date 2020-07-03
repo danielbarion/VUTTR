@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import Icon from 'components/Icon'
 import style from './style.module.css'
 
 const Button = ({
   className,
+  icon,
   iconClassName,
   type,
   label,
@@ -14,6 +16,7 @@ const Button = ({
   disabled,
   bordered,
   element: ButtonElement,
+  iconSize,
   ...rest
 }) => {
   const buttonClassNames = classNames(style.button, style[variant], style[display], {
@@ -28,6 +31,9 @@ const Button = ({
       disabled={disabled}
       {...rest}
     >
+      {icon && (
+        <Icon className={classNames(style.icon, iconClassName)} icon={icon} size={iconSize} />
+      )}
       {label}
     </ButtonElement>
   )
@@ -35,6 +41,7 @@ const Button = ({
 
 Button.propTypes = {
   className: PropTypes.string,
+  icon: PropTypes.string,
   iconClassName: PropTypes.string,
   display: PropTypes.oneOf(['neutral', 'success', 'danger']),
   variant: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'quartiary']),
@@ -44,10 +51,12 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   bordered: PropTypes.bool,
   element: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.object]),
+  iconSize: PropTypes.oneOf(['xxxs', 'xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl']),
 }
 
 Button.defaultProps = {
   className: null,
+  icon: null,
   iconClassName: null,
   display: 'neutral',
   variant: 'primary',
@@ -57,6 +66,7 @@ Button.defaultProps = {
   onClick: null,
   disabled: false,
   bordered: false,
+  iconSize: 's',
 }
 
 export default Button

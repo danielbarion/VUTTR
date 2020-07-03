@@ -237,3 +237,13 @@
 .quartiary.danger:disabled {
   color: var(--vuttr-color-light-red);
 }
+
+/* icon */
+.icon {
+  margin-right: var(--vuttr-spacing-m);
+}
+
+.primary .icon svg {
+  fill: var(--vuttr-color-white);
+  filter: brightness(100);
+}

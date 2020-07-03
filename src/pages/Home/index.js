@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Header from 'components/Header'
 import Container from 'components/Container'
 import CardsList from 'components/CardsList'
-import FieldText from 'components/FieldText'
+import HeaderActions from 'components/HeaderActions'
 import style from './style.module.css'
 
 const HomePage = ({ toolsList }) => {
@@ -23,12 +23,6 @@ const HomePage = ({ toolsList }) => {
       "Very Usefull Tools to Remember, don't waste your time thinking, just write down the tool! Come See!",
     applicationCategory: 'Multimedia',
     sourceOrganization: 'localhost.com',
-  }
-
-  const [value, setValue] = React.useState('')
-
-  const handleChange = (e) => {
-    setValue(e.target.value)
   }
 
   return (
@@ -59,14 +53,7 @@ const HomePage = ({ toolsList }) => {
       <Container className={style.mainContent} element="main">
         <Header className={style.header} />
 
-        <FieldText
-          name="name-1"
-          hint="Digite seu nome completo"
-          value={value}
-          onChange={handleChange}
-          prefixIcon="Icon-Search-2px"
-          sufixIcon="Icon-Search-2px"
-        />
+        <HeaderActions className={style.actions} />
 
         <CardsList toolsList={toolsList} />
       </Container>

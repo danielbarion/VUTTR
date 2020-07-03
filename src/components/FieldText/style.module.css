@@ -46,11 +46,11 @@
 }
 
 .hasPrefixIcon .input {
-  padding-left: calc(var(--vuttr-spacing-xl) + var(--vuttr-spacing-s));
+  padding-left: calc(var(--vuttr-spacing-xl) + var(--vuttr-spacing-s) + var(--vuttr-spacing-xxs));
 }
 
 .hasSufixIcon .input {
-  padding-right: calc(var(--vuttr-spacing-xl) + var(--vuttr-spacing-s));
+  padding-right: calc(var(--vuttr-spacing-xl) + var(--vuttr-spacing-s) + var(--vuttr-spacing-xxs));
 }
 
 .prefixIcon,
@@ -59,8 +59,8 @@
   left: var(--vuttr-spacing-m);
   display: flex;
   align-self: center;
-  fill: var(--vuttr-color-light-ink);
-  width: var(--vuttr-spacing-m);
+  fill: var(--vuttr-color-lighter-ink);
+  width: calc(var(--vuttr-spacing-m) + var(--vuttr-spacing-xxs));
 }
 
 .sufixIcon {
