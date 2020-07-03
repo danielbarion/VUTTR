@@ -18,6 +18,8 @@ export class AppStateProvider extends React.Component {
       modalContent: null,
       modalUserMail: null,
       lastUrl: null,
+      searchQuerie: '',
+      toolsList: [],
     }
   }
 
@@ -53,9 +55,24 @@ export class AppStateProvider extends React.Component {
     this.setState({ lastUrl: url })
   }
 
+  setSearchQuerie = (value) => {
+    this.setState({ searchQuerie: value })
+  }
+
+  setToolsList = (toolsList) => {
+    this.setState({ toolsList: [...toolsList] })
+  }
+
   render() {
     const { children } = this.props
-    const { modalOpened, modalContent, modalUserMail, lastUrl } = this.state
+    const {
+      modalOpened,
+      modalContent,
+      modalUserMail,
+      lastUrl,
+      searchQuerie,
+      toolsList,
+    } = this.state
 
     return (
       <AppContext.Provider
@@ -65,11 +82,15 @@ export class AppStateProvider extends React.Component {
             modalContent,
             modalUserMail,
             lastUrl,
+            searchQuerie,
+            toolsList,
           },
           modalOpen: this.modalOpen,
           modalClose: this.modalClose,
           setEmail: this.setEmail,
           setLastUrl: this.setLastUrl,
+          setSearchQuerie: this.setSearchQuerie,
+          setToolsList: this.setToolsList,
         }}
       >
         {children}

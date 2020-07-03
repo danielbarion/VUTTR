@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
+import { WrapComponentWithAppStateConsumer } from 'AppContext'
 import Header from 'components/Header'
 import Container from 'components/Container'
 import CardsList from 'components/CardsList'
 import HeaderActions from 'components/HeaderActions'
 import style from './style.module.css'
 
-const HomePage = ({ toolsList }) => {
+const HomePage = ({ context, toolsData }) => {
+  const { setToolsList, state } = context
+  const { toolsList } = state
+
+  useEffect(() => {
+    if (toolsData.length) {
+      setToolsList(toolsData)
+    }
+  }, [])
+
+  /**
+   * Page Meta Data
+   */
   const title = 'Very Usefull Tools to Remember - VUTTR'
   const metaDescription =
     "Very Usefull Tools to Remember, don't waste your time thinking, just write down the tool! Come See!"
@@ -62,7 +75,7 @@ const HomePage = ({ toolsList }) => {
 }
 
 HomePage.propTypes = {
-  toolsList: PropTypes.arrayOf(
+  toolsData: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
@@ -71,10 +84,24 @@ HomePage.propTypes = {
       tags: PropTypes.arrayOf(PropTypes.string),
     }),
   ),
+  context: PropTypes.shape({
+    state: PropTypes.shape({
+      toolsList: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.number.isRequired,
+          title: PropTypes.string.isRequired,
+          description: PropTypes.string.isRequired,
+          link: PropTypes.string,
+          tags: PropTypes.arrayOf(PropTypes.string),
+        }),
+      ),
+    }),
+    setToolsList: PropTypes.func.isRequired,
+  }).isRequired,
 }
 
 HomePage.defaultProps = {
-  toolsList: [],
+  toolsData: [],
 }
 
-export default HomePage
+export default WrapComponentWithAppStateConsumer(HomePage)

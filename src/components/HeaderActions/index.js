@@ -1,15 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import { WrapComponentWithAppStateConsumer } from 'AppContext'
 import FieldText from 'components/FieldText'
 import Button from 'components/Button'
 import style from './style.module.css'
 
-const HeaderActions = ({ className }) => {
-  const [value, setValue] = React.useState('')
+const HeaderActions = ({ className, context }) => {
+  const { state, setSearchQuerie } = context
+  const { searchQuerie } = state
 
   const handleChange = (e) => {
-    setValue(e.target.value)
+    setSearchQuerie(e.target.value)
   }
 
   return (
@@ -18,7 +20,7 @@ const HeaderActions = ({ className }) => {
         name="name-1"
         hint="Digite seu nome completo"
         placeholder="search"
-        value={value}
+        value={searchQuerie}
         onChange={handleChange}
         prefixIcon="Icon-Search-2px"
       />
@@ -36,4 +38,4 @@ HeaderActions.defaultProps = {
   className: null,
 }
 
-export default HeaderActions
+export default WrapComponentWithAppStateConsumer(HeaderActions)

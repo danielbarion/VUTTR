@@ -9,7 +9,7 @@ Home.getInitialProps = async () => {
   const { data } = response
 
   return {
-    toolsList: data,
+    toolsData: data,
   }
 }
 
