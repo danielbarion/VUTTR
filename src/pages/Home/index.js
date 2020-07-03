@@ -14,7 +14,7 @@ const HomePage = ({ context, toolsData }) => {
 
   useEffect(() => {
     if (toolsData.length) {
-      setToolsList(toolsData)
+      setToolsList([...toolsData])
     }
   }, [])
 
@@ -65,9 +65,7 @@ const HomePage = ({ context, toolsData }) => {
 
       <Container className={style.mainContent} element="main">
         <Header className={style.header} />
-
         <HeaderActions className={style.actions} />
-
         <CardsList toolsList={toolsList} />
       </Container>
     </div>
