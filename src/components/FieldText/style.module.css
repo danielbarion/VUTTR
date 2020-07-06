@@ -1,0 +1,157 @@
+.container {
+  position: relative;
+  padding-bottom: var(--vuttr-spacing-l);
+}
+
+.field {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.field.hasLabel {
+  height: calc(var(--vuttr-size-field) + var(--vuttr-spacing-special-field-label));
+}
+
+.input {
+  margin: 0;
+  width: 100%;
+  border: 1px solid var(--vuttr-color-darkest-white);
+  border-radius: var(--vuttr-border-radius-special);
+  height: var(--vuttr-size-field);
+  padding: var(--vuttr-spacing-special-field-top) var(--vuttr-spacing-special-field-horizontal)
+    var(--vuttr-spacing-special-field-bottom) var(--vuttr-spacing-special-field-horizontal);
+  box-sizing: border-box;
+  outline: none;
+  background-color: var(--vuttr-color-darker-white);
+  transition: all 200ms ease;
+  font-size: var(--vuttr-font-size-special-field);
+  font-weight: var(--vuttr-font-weight-regular);
+  color: var(--vuttr-color-ink);
+  caret-color: var(--vuttr-color-lighter-ink);
+  letter-spacing: 0;
+}
+
+.input::-webkit-input-placeholder {
+  color: var(--vuttr-color-lighter-ink);
+}
+
+.input:-ms-input-placeholder {
+  color: var(--vuttr-color-lighter-ink);
+}
+
+.input::placeholder {
+  color: var(--vuttr-color-lighter-ink);
+}
+
+.hasPrefixIcon .input {
+  padding-left: calc(var(--vuttr-spacing-xl) + var(--vuttr-spacing-s) + var(--vuttr-spacing-xxs));
+}
+
+.hasSufixIcon .input {
+  padding-right: calc(var(--vuttr-spacing-xl) + var(--vuttr-spacing-s) + var(--vuttr-spacing-xxs));
+}
+
+.prefixIcon,
+.sufixIcon {
+  position: absolute;
+  left: var(--vuttr-spacing-m);
+  display: flex;
+  align-self: center;
+  fill: var(--vuttr-color-lighter-ink);
+  width: calc(var(--vuttr-spacing-m) + var(--vuttr-spacing-xxs));
+}
+
+.sufixIcon {
+  left: unset;
+  right: var(--vuttr-spacing-m);
+}
+
+.iconClickable {
+  cursor: pointer;
+}
+
+.disabled .prefixIcon,
+.disabled .sufixIcon {
+  fill: var(--vuttr-color-lighter-ink);
+}
+
+.disabled .input {
+  color: var(--vuttr-color-lighter-ink);
+  border-color: var(--color-neutral-200);
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  left: var(--vuttr-spacing-m);
+  color: var(--vuttr-color-ink);
+  font-weight: var(--vuttr-font-weight-semibold);
+  font-size: var(--vuttr-font-size-special-field);
+  padding-bottom: var(--vuttr-spacing-special-field-label);
+  letter-spacing: 0.4px;
+}
+
+.required {
+  color: var(--vuttr-color-light-ink);
+  height: var(--vuttr-size-field-required);
+  padding-left: var(--vuttr-spacing-s);
+}
+
+.hasLabel .prefixIcon,
+.hasLabel .sufixIcon {
+  top: calc(var(--vuttr-spacing-xl) + var(--vuttr-spacing-m));
+}
+
+.disabled .label {
+  color: var(--vuttr-color-lighter-ink);
+}
+
+.supportText {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  font: var(--font-field-support);
+  color: var(--vuttr-color-light-ink);
+  letter-spacing: 0.36px;
+  font-size: var(--vuttr-font-size-special-field-support-text);
+}
+
+.disabled .supportText {
+  color: var(--vuttr-color-lighter-ink);
+}
+
+.error .input {
+  background-color: var(--vuttr-color-most-lightest-red);
+  color: var(--vuttr-color-red);
+}
+
+.focused .input {
+  border-color: var(--vuttr-color-most-darkest-white);
+  background-color: var(--vuttr-color-darkest-white);
+}
+
+.focused .input::-webkit-input-placeholder {
+  color: var(--vuttr-color-light-ink);
+}
+
+.focused .input:-ms-input-placeholder {
+  color: var(--vuttr-color-light-ink);
+}
+
+.focused .input::placeholder {
+  color: var(--vuttr-color-light-ink);
+}
+
+.error,
+.error .supportText,
+.error .required {
+  color: var(--vuttr-color-red);
+}
+
+.error .field .input {
+  border-color: var(--vuttr-color-red);
+  caret-color: var(--vuttr-color-red);
+}

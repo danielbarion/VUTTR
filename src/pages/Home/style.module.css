@@ -1,7 +1,14 @@
 .mainContent {
   display: flex;
+  flex-direction: column;
 }
 
-.search {
+.header {
+  padding-top: calc(var(--vuttr-spacing-xxl) + var(--vuttr-spacing-xl));
+  margin-bottom: calc(var(--vuttr-spacing-xl) + var(--vuttr-spacing-m));
+}
+
+.actions {
   display: flex;
+  justify-content: space-between;
 }

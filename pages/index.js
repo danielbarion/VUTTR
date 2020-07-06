@@ -1,8 +1,16 @@
 import React from 'react'
-import HomePage from '../src/pages/Home'
+import { getTools } from 'utils/api'
+import HomePage from 'pages/Home'
 
-const Home = (props) => {
-  return <HomePage {...props} />
+const Home = (props) => <HomePage {...props} />
+
+Home.getInitialProps = async () => {
+  const response = await getTools()
+  const { data } = response
+
+  return {
+    toolsData: data,
+  }
 }
 
 export default Home

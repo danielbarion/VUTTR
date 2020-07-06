@@ -1,9 +1,26 @@
-import React from 'react'
-// import PropTypes from 'prop-types'
+import React, { useEffect } from 'react'
+import PropTypes from 'prop-types'
 import Head from 'next/head'
+import { WrapComponentWithAppStateConsumer } from 'AppContext'
+import Header from 'components/Header'
+import Container from 'components/Container'
+import CardsList from 'components/CardsList'
+import HeaderActions from 'components/HeaderActions'
 import style from './style.module.css'
 
-const HomePage = () => {
+const HomePage = ({ context, toolsData }) => {
+  const { setToolsList, state } = context
+  const { toolsList } = state
+
+  useEffect(() => {
+    if (toolsData.length) {
+      setToolsList([...toolsData])
+    }
+  }, [])
+
+  /**
+   * Page Meta Data
+   */
   const title = 'Very Usefull Tools to Remember - VUTTR'
   const metaDescription =
     "Very Usefull Tools to Remember, don't waste your time thinking, just write down the tool! Come See!"
@@ -13,13 +30,11 @@ const HomePage = () => {
 
   const scheme = {
     '@context': 'http://schema.org',
-    '@type': 'ImageObject',
+    '@type': 'SoftwareApplication',
     name: title,
     description:
       "Very Usefull Tools to Remember, don't waste your time thinking, just write down the tool! Come See!",
-    contentUrl: '/static/img/home-seo.png',
-    thumbnail: '/static/img/home-seo.png',
-    fileFormat: 'image/jpeg',
+    applicationCategory: 'Multimedia',
     sourceOrganization: 'localhost.com',
   }
 
@@ -48,14 +63,43 @@ const HomePage = () => {
         />
       </Head>
 
-      <main className={style.mainContent}>
-        <h1>VUTTR</h1>
-        <h2>Very Usefull Tools to Remember</h2>
-
-        <div className={style.search}>sad</div>
-      </main>
+      <Container className={style.mainContent} element="main">
+        <Header className={style.header} />
+        <HeaderActions className={style.actions} />
+        <CardsList toolsList={toolsList} />
+      </Container>
     </div>
   )
 }
 
-export default HomePage
+HomePage.propTypes = {
+  toolsData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      link: PropTypes.string,
+      tags: PropTypes.arrayOf(PropTypes.string),
+    }),
+  ),
+  context: PropTypes.shape({
+    state: PropTypes.shape({
+      toolsList: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.number.isRequired,
+          title: PropTypes.string.isRequired,
+          description: PropTypes.string.isRequired,
+          link: PropTypes.string,
+          tags: PropTypes.arrayOf(PropTypes.string),
+        }),
+      ),
+    }),
+    setToolsList: PropTypes.func.isRequired,
+  }).isRequired,
+}
+
+HomePage.defaultProps = {
+  toolsData: [],
+}
+
+export default WrapComponentWithAppStateConsumer(HomePage)

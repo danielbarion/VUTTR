@@ -1,0 +1,51 @@
+.typography {
+  color: var(--vuttr-color-ink);
+}
+
+.header1 {
+  font-size: var(--vuttr-font-size-special-xxxl);
+  font-weight: var(--vuttr-font-weight-semibold);
+  letter-spacing: 0.84px;
+}
+
+.header2 {
+  font-size: var(--vuttr-font-size-special-xxl);
+  font-weight: var(--vuttr-font-weight-semibold);
+  letter-spacing: 0.72px;
+}
+
+.header3 {
+  font-size: var(--vuttr-font-size-special-xl);
+  font-weight: var(--vuttr-font-weight-semibold);
+  letter-spacing: 0.6px;
+}
+
+.header4 {
+  font-size: var(--vuttr-font-size-special-l);
+  font-weight: var(--vuttr-font-weight-semibold);
+  letter-spacing: 0.52px;
+}
+
+.header5 {
+  font-size: var(--vuttr-font-size-special-m);
+  font-weight: var(--vuttr-font-weight-semibold);
+  letter-spacing: 0.48px;
+}
+
+.body {
+  font-size: var(--vuttr-font-size-special-s);
+  font-weight: var(--vuttr-font-weight-regular);
+  letter-spacing: 0.4px;
+}
+
+.bodyS {
+  font-size: var(--vuttr-font-size-special-xs);
+  font-weight: var(--vuttr-font-weight-regular);
+  letter-spacing: 0.36px;
+}
+
+.bodyXS {
+  font-size: var(--vuttr-font-size-special-xxs);
+  font-weight: var(--vuttr-font-weight-regular);
+  letter-spacing: 0.32px;
+}

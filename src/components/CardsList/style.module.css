@@ -1,0 +1,29 @@
+.cardsList {
+  /* empty */
+}
+
+.toolCard {
+  padding: var(--vuttr-spacing-l);
+  margin-bottom: var(--vuttr-spacing-l);
+  background-color: var(--vuttr-color-white);
+}
+
+.title {
+  margin-bottom: var(--vuttr-spacing-s);
+}
+
+.description {
+  margin-bottom: var(--vuttr-spacing-m);
+}
+
+.tags {
+  display: flex;
+}
+
+.tag {
+  font-weight: var(--vuttr-font-weight-semibold);
+}
+
+.tag:not(:last-child) {
+  padding-right: var(--vuttr-spacing-s);
+}

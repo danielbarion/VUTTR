@@ -1,4 +1,190 @@
+/* Roboto web font */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700;900&display=swap');
+
+html,
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  html,
+  body {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+}
+
 :root {
+  /* blue */
+  --vuttr-color-darker-blue: #244aa8;
+  --vuttr-color-dark-blue: #2f55cc;
+  --vuttr-color-blue: #365df0;
+  --vuttr-color-light-blue: #9aaef7;
+  --vuttr-color-lighter-blue: #b9c6fa;
+  --vuttr-color-lightest-blue: #cad6fc;
+  --vuttr-color-most-lightest-blue: #e1e7fd;
+
+  /* green */
+  --vuttr-color-darker-green: #0e995d;
+  --vuttr-color-dark-green: #10b26c;
+  --vuttr-color-green: #12db89;
+  --vuttr-color-light-green: #88edc4;
+  --vuttr-color-lighter-green: #b7f7d8;
+  --vuttr-color-lightest-green: #cff9e6;
+  --vuttr-color-most-lightest-green: #e7fbf3;
+
+  /* red */
+  --vuttr-color-darker-red: #a53f3f;
+  --vuttr-color-dark-red: #cc4c4c;
+  --vuttr-color-red: #f95e5a;
+  --vuttr-color-light-red: #fcaeac;
+  --vuttr-color-lighter-red: #fcc6c5;
+  --vuttr-color-lightest-red: #fcd7d6;
+  --vuttr-color-most-lightest-red: #feefee;
+
+  /* yellow */
+  --vuttr-color-darker-yellow: #996c2b;
+  --vuttr-color-dark-yellow: #d89c3a;
+  --vuttr-color-yellow: #ffbb43;
+  --vuttr-color-light-yellow: #ffdda1;
+  --vuttr-color-lighter-yellow: #fff8ec;
+
+  /* purple */
+  --vuttr-color-darker-purple: #353372;
+  --vuttr-color-dark-purple: #4c4499;
+  --vuttr-color-purple: #6554c0;
+  --vuttr-color-light-purple: #b2a9df;
+  --vuttr-color-lighter-purple: #efeef9;
+
+  /* teal */
+  --vuttr-color-darker-teal: #2497b2;
+  --vuttr-color-dark-teal: #2bafd8;
+  --vuttr-color-teal: #30c3fc;
+  --vuttr-color-light-teal: #98e1fe;
+  --vuttr-color-lighter-teal: #eaf9ff;
+
+  /* white */
+  --vuttr-color-white: #fff;
+  --vuttr-color-dark-white: #fcfcfd;
+  --vuttr-color-darker-white: #f5f4f6;
+  --vuttr-color-darkest-white: #ebeaed;
+  --vuttr-color-most-darkest-white: #dedce1;
+
+  /* ink */
+  --vuttr-color-ink: #170c3a;
+  --vuttr-color-light-ink: #8f8a9b;
+  --vuttr-color-lighter-ink: #b1adb9;
+  --vuttr-color-lighest-ink: #c7c4cd;
+
+  /* spacings */
+  --vuttr-spacing-squish-s: 4px 8px;
+  --vuttr-spacing-squish-m: 8px 12px;
+  --vuttr-spacing-squish-l: 12px 16px;
+  --vuttr-spacing-squish-xl: 12px 24px;
+  --vuttr-spacing-xxs: 4px;
+  --vuttr-spacing-s: 8px;
+  --vuttr-spacing-sm: 12px;
+  --vuttr-spacing-m: 16px;
+  --vuttr-spacing-l: 24px;
+  --vuttr-spacing-xl: 32px;
+  --vuttr-spacing-xxl: 64px;
+
+  /***** spacings - special *****/
+  --vuttr-spacing-special-button-top: 14px;
+  --vuttr-spacing-special-button-bottom: 13px;
+  --vuttr-spacing-special-button-horizontal: 26px;
+  --vuttr-spacing-special-button-horizontal-small: 18px;
+  --vuttr-spacing-special-field-top: 13px;
+  --vuttr-spacing-special-field-bottom: 12px;
+  --vuttr-spacing-special-field-horizontal: 21px;
+  --vuttr-spacing-special-field-label: 20px;
+
+  /* outside shadow */
+  --vuttr-shadow-1: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --vuttr-shadow-2: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --vuttr-shadow-3: 0 16px 32px rgba(0, 0, 0, 0.15);
+  --vuttr-shadow-4: 0 32px 64px rgba(0, 0, 0, 0.15);
+
+  /* cards shadow */
+  --vuttr-shadow-flat: none;
+  --vuttr-shadow-elevation-1: 0 5px 7px #0000000d;
+  --vuttr-shadow-elevation-2: 0 10px 10px #0000000d;
+  --vuttr-shadow-elevation-3: 0 15px 20px #00000012;
+  --vuttr-shadow-elevation-4: 0 20px 25px #0000001a;
+
+  /* icon sizes */
+  --vuttr-size-icon-xxxs: 10px;
+  --vuttr-size-icon-xxs: 12px;
+  --vuttr-size-icon-xs: 15px;
+  --vuttr-size-icon-s: 20px;
+  --vuttr-size-icon-m: 25px;
+  --vuttr-size-icon-l: 35px;
+  --vuttr-size-icon-xl: 45px;
+  --vuttr-size-icon-xxl: 60px;
+  --vuttr-size-icon-xxxl: 75px;
+
+  /* fonts */
+  --vuttr-font-family: 'Source Sans Pro', sans-serif;
+
+  /* font size */
+  --vuttr-font-size-xxs: 11px;
+  --vuttr-font-size-xs: 12px;
+  --vuttr-font-size-s: 14px;
+  --vuttr-font-size-m: 16px;
+  --vuttr-font-size-l: 19px;
+  --vuttr-font-size-xl: 28px;
+  --vuttr-font-size-xxl: 43px;
+  --vuttr-font-size-xxxl: 64px;
+
+  /***** font size - special *****/
+  --vuttr-font-size-special-button: 18px;
+  --vuttr-font-size-special-field: 20px;
+  --vuttr-font-size-special-field-support-text: 18px;
+  --vuttr-font-size-special-xxs: 16px;
+  --vuttr-font-size-special-xs: 18px;
+  --vuttr-font-size-special-s: 20px;
+  --vuttr-font-size-special-m: 24px;
+  --vuttr-font-size-special-l: 26px;
+  --vuttr-font-size-special-xl: 30px;
+  --vuttr-font-size-special-xxl: 36px;
+  --vuttr-font-size-special-xxxl: 42px;
+
+  /* font weight */
+  --vuttr-font-weight-regular: 400;
+  --vuttr-font-weight-medium: 500;
+  --vuttr-font-weight-semibold: 600;
+  --vuttr-font-weight-bold: 700;
+  --vuttr-font-weight-black: 900;
+
+  /* font style */
+  --vuttr-font-field-support: var(--font-weight-regular) var(--font-size-xs) var(--font-family);
+  --vuttr-font-list-label: var(--font-weight-medium) var(--font-size-m) var(--font-family);
+
+  /* border radius */
+  --vuttr-border-radius-s: 4px;
+  --vuttr-border-radius-m: 8px;
+  --vuttr-border-radius-l: 12px;
+  --vuttr-border-radius-xl: 16px;
+  --vuttr-border-radius-pill: 500px;
+  --vuttr-border-radius-circle: 50%;
+
+  /***** border radius - special *****/
+  --vuttr-border-radius-special: 5px;
+
+  /* depths */
+  --vuttr-depth-base: 1;
+  --vuttr-depth-sidebar-nav: 2;
+  --vuttr-depth-modal: 3;
+
+  /* general sizes */
+  --vuttr-size-field: 50px;
+  --vuttr-size-field-required: 10px;
+  --vuttr-size-button: 50px;
+  --vuttr-size-button-small: 35px;
+  --vuttr-size-container-width: 800px;
+
   /* custom colors */
-  --background-color: #f4f4f4;
+  --vuttr-color-green-no-mapped: #0dcb7d;
+
+  /* others */
+  --vuttr-border-card: 1px solid var(--vuttr-color-darkest-white);
 }
