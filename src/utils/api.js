@@ -38,8 +38,8 @@ export const request = async ({
 /**
  * Get tools from API
  */
-export const getTools = async () =>
+export const getTools = async (querie = '') =>
   request({
-    url: '/tools',
+    url: `/tools?${querie}`,
     method: 'GET',
   })

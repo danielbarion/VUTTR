@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
+import useDebounce from 'utils/use-debounce'
+import { getTools } from 'utils/api'
 
 const AppContext = React.createContext()
 
@@ -10,11 +12,29 @@ export const WrapComponentWithAppStateConsumer = (Component) => (props) => (
 )
 
 export const AppStateProvider = ({ children }) => {
+  const [appInitialized, setAppInitialized] = useState(false)
   const [modalOpened, setModalOpened] = useState(false)
   const [modalContent, setModalContent] = useState(null)
   const [lastUrl, setLastUrl] = useState(null)
   const [searchQuerie, setSearchQuerie] = useState('')
   const [toolsList, setToolsList] = useState([])
+
+  const debouncedSearchQuerie = useDebounce(searchQuerie, 600)
+
+  const getToolsByQuerie = async () => {
+    const { data } = await getTools(`q=${debouncedSearchQuerie}`)
+    setToolsList([...data])
+  }
+
+  useEffect(() => {
+    if (appInitialized) {
+      getToolsByQuerie()
+    }
+
+    if (!appInitialized) {
+      setAppInitialized(true)
+    }
+  }, [debouncedSearchQuerie])
 
   const modalOpen = (content) => {
     setModalContent(content)
