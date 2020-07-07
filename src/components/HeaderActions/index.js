@@ -32,6 +32,13 @@ const HeaderActions = ({ className, context }) => {
 
 HeaderActions.propTypes = {
   className: PropTypes.string,
+  context: PropTypes.shape({
+    state: PropTypes.shape({
+      searchQuerie: PropTypes.string.isRequired,
+      isLoadingTools: PropTypes.bool.isRequired,
+    }),
+    setSearchQuerie: PropTypes.func.isRequired,
+  }).isRequired,
 }
 
 HeaderActions.defaultProps = {

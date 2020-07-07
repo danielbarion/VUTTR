@@ -13,6 +13,7 @@ export const WrapComponentWithAppStateConsumer = (Component) => (props) => (
 
 export const AppStateProvider = ({ children }) => {
   const [appInitialized, setAppInitialized] = useState(false)
+  const [isLoadingTools, setIsLoadingTools] = useState(true)
   const [modalOpened, setModalOpened] = useState(false)
   const [modalContent, setModalContent] = useState(null)
   const [lastUrl, setLastUrl] = useState(null)
@@ -22,8 +23,10 @@ export const AppStateProvider = ({ children }) => {
   const debouncedSearchQuerie = useDebounce(searchQuerie, 600)
 
   const getToolsByQuerie = async () => {
+    setIsLoadingTools(true)
     const { data } = await getTools(`q=${debouncedSearchQuerie}`)
     setToolsList([...data])
+    setIsLoadingTools(false)
   }
 
   useEffect(() => {
@@ -61,12 +64,14 @@ export const AppStateProvider = ({ children }) => {
           lastUrl,
           searchQuerie,
           toolsList,
+          isLoadingTools,
         },
         modalOpen,
         modalClose,
         setLastUrl,
         setSearchQuerie,
         setToolsList,
+        setIsLoadingTools,
       }}
     >
       {children}

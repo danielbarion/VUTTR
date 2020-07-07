@@ -9,12 +9,13 @@ import HeaderActions from 'components/HeaderActions'
 import style from './style.module.css'
 
 const HomePage = ({ context, toolsData }) => {
-  const { setToolsList, state } = context
-  const { toolsList } = state
+  const { setToolsList, setIsLoadingTools, state } = context
+  const { toolsList, isLoadingTools } = state
 
   useEffect(() => {
     if (toolsData.length) {
       setToolsList([...toolsData])
+      setIsLoadingTools(false)
     }
   }, [])
 
@@ -66,7 +67,7 @@ const HomePage = ({ context, toolsData }) => {
       <Container className={style.mainContent} element="main">
         <Header className={style.header} />
         <HeaderActions className={style.actions} />
-        <CardsList toolsList={toolsList} />
+        <CardsList toolsList={toolsList} isLoading={isLoadingTools} />
       </Container>
     </div>
   )
@@ -93,8 +94,10 @@ HomePage.propTypes = {
           tags: PropTypes.arrayOf(PropTypes.string),
         }),
       ),
+      isLoadingTools: PropTypes.bool.isRequired,
     }),
     setToolsList: PropTypes.func.isRequired,
+    setIsLoadingTools: PropTypes.func.isRequired,
   }).isRequired,
 }
 

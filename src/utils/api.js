@@ -10,6 +10,7 @@ export const request = async ({
   let sanitizedUrl = url
 
   if (!url) {
+    // eslint-disable-next-line no-console
     return console.error('no url provided to request')
   }
 
