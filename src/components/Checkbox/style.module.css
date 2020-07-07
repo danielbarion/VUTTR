@@ -1,0 +1,29 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.label {
+  font-size: var(--vuttr-font-size-special-s);
+  color: var(--vuttr-color-ink);
+}
+
+.icon {
+  font-size: 30px;
+  color: var(--vuttr-color-darker-white);
+  margin-right: var(--vuttr-spacing-s);
+}
+
+.checkbox.checked .icon {
+  color: var(--vuttr-color-blue);
+}
+
+.checkbox[disabled],
+.checkbox[disabled] .icon {
+  pointer-events: none;
+  color: var(--vuttr-color-most-darkest-white);
+}

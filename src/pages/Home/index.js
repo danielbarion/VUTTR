@@ -66,7 +66,7 @@ const HomePage = ({ context, toolsData }) => {
 
       <Container className={style.mainContent} element="main">
         <Header className={style.header} />
-        <HeaderActions className={style.actions} />
+        <HeaderActions />
         <CardsList toolsList={toolsList} isLoading={isLoadingTools} />
       </Container>
     </div>

@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { WrapComponentWithAppStateConsumer } from 'AppContext'
 import FieldText from 'components/FieldText'
 import Button from 'components/Button'
+import Checkbox from 'components/Checkbox'
 import style from './style.module.css'
 
 const HeaderActions = ({ className, context }) => {
@@ -14,8 +15,14 @@ const HeaderActions = ({ className, context }) => {
     setSearchQuerie(e.target.value)
   }
 
+  const [checkboxValue, setCheckboxValue] = React.useState(false)
+
+  const handleCheckboxClick = () => {
+    setCheckboxValue(!checkboxValue)
+  }
+
   return (
-    <div className={classNames(style.HeaderActions, className)}>
+    <div className={classNames(style.headerActions, className)}>
       <FieldText
         name="name-1"
         hint="Digite seu nome completo"
@@ -23,6 +30,14 @@ const HeaderActions = ({ className, context }) => {
         value={searchQuerie}
         onChange={handleChange}
         prefixIcon="Icon-Search-2px"
+        className={style.searchField}
+      />
+
+      <Checkbox
+        label="search in tags only"
+        value={checkboxValue}
+        onClick={handleCheckboxClick}
+        className={style.tagsCheckbox}
       />
 
       <Button label="Add" iconClassName={style.addIcon} icon="Icon-Close-2px" iconSize="xs" />

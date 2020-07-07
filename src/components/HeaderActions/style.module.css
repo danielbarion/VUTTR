@@ -1,5 +1,17 @@
 .headerActions {
-  /* empty */
+  display: grid;
+  grid-template-areas: 'search tagsOnly addButton';
+  grid-template-columns: 260px auto 115px;
+  align-items: center;
+  padding-bottom: var(--vuttr-spacing-l);
+}
+
+.searchField {
+  padding-bottom: 0;
+}
+
+.tagsCheckbox {
+  padding-left: var(--vuttr-spacing-s);
 }
 
 .addIcon {
