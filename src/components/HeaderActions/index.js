@@ -8,17 +8,15 @@ import Checkbox from 'components/Checkbox'
 import style from './style.module.css'
 
 const HeaderActions = ({ className, context }) => {
-  const { state, setSearchQuerie } = context
-  const { searchQuerie } = state
+  const { state, setSearchQuerie, setSearchInTagsOnly } = context
+  const { searchQuerie, searchInTagsOnly } = state
 
   const handleChange = (e) => {
     setSearchQuerie(e.target.value)
   }
 
-  const [checkboxValue, setCheckboxValue] = React.useState(false)
-
   const handleCheckboxClick = () => {
-    setCheckboxValue(!checkboxValue)
+    setSearchInTagsOnly(!searchInTagsOnly)
   }
 
   return (
@@ -35,7 +33,7 @@ const HeaderActions = ({ className, context }) => {
 
       <Checkbox
         label="search in tags only"
-        value={checkboxValue}
+        value={searchInTagsOnly}
         onClick={handleCheckboxClick}
         className={style.tagsCheckbox}
       />
@@ -50,9 +48,11 @@ HeaderActions.propTypes = {
   context: PropTypes.shape({
     state: PropTypes.shape({
       searchQuerie: PropTypes.string.isRequired,
+      searchInTagsOnly: PropTypes.bool.isRequired,
       isLoadingTools: PropTypes.bool.isRequired,
     }),
     setSearchQuerie: PropTypes.func.isRequired,
+    setSearchInTagsOnly: PropTypes.func.isRequired,
   }).isRequired,
 }
 

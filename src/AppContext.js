@@ -18,26 +18,29 @@ export const AppStateProvider = ({ children }) => {
   const [modalContent, setModalContent] = useState(null)
   const [lastUrl, setLastUrl] = useState(null)
   const [searchQuerie, setSearchQuerie] = useState('')
+  const [searchInTagsOnly, setSearchInTagsOnly] = useState(false)
   const [toolsList, setToolsList] = useState([])
 
-  const debouncedSearchQuerie = useDebounce(searchQuerie, 600)
+  const debouncedSearchQuerie = useDebounce(searchQuerie, 450)
+  const debouncedSearchInTagsOnly = useDebounce(searchInTagsOnly, 450)
 
   const getToolsByQuerie = async () => {
     setIsLoadingTools(true)
-    const { data } = await getTools(`q=${debouncedSearchQuerie}`)
+    const querie = searchInTagsOnly
+      ? `tags_like=${debouncedSearchQuerie}`
+      : `q=${debouncedSearchQuerie}`
+    const { data } = await getTools(querie)
     setToolsList([...data])
     setIsLoadingTools(false)
   }
 
   useEffect(() => {
-    if (appInitialized) {
-      getToolsByQuerie()
-    }
-
     if (!appInitialized) {
       setAppInitialized(true)
+    } else {
+      getToolsByQuerie()
     }
-  }, [debouncedSearchQuerie])
+  }, [debouncedSearchQuerie, debouncedSearchInTagsOnly])
 
   const modalOpen = (content) => {
     setModalContent(content)
@@ -65,6 +68,7 @@ export const AppStateProvider = ({ children }) => {
           searchQuerie,
           toolsList,
           isLoadingTools,
+          searchInTagsOnly,
         },
         modalOpen,
         modalClose,
@@ -72,6 +76,7 @@ export const AppStateProvider = ({ children }) => {
         setSearchQuerie,
         setToolsList,
         setIsLoadingTools,
+        setSearchInTagsOnly,
       }}
     >
       {children}

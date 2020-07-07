@@ -17,7 +17,7 @@
     }
   },
   "rules": {
-    "operator-linebreak": [2, "after"],
+    "operator-linebreak": [2, "before"],
     "object-curly-newline": 0,
     "implicit-arrow-linebreak": 0,
     "semi": ["error", "never"],
