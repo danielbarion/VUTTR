@@ -79,7 +79,7 @@
 
 .disabled .input {
   color: var(--vuttr-color-lighter-ink);
-  border-color: var(--color-neutral-200);
+  border-color: var(--vuttr-color-darkest-white);
 }
 
 .label {
