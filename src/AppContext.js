@@ -25,12 +25,24 @@ export const AppStateProvider = ({ children }) => {
   const debouncedSearchInTagsOnly = useDebounce(searchInTagsOnly, 450)
 
   const getToolsByQuerie = async () => {
+    const initialTime = performance.now()
+
     setIsLoadingTools(true)
+
     const querie = searchInTagsOnly
       ? `tags_like=${debouncedSearchQuerie}`
       : `q=${debouncedSearchQuerie}`
     const { data } = await getTools(querie)
+
     setToolsList([...data])
+
+    const lastTime = performance.now()
+
+    // don't penalize users with low internet connection (time is in milliseconds)
+    if (lastTime - initialTime >= 350) {
+      setIsLoadingTools(false)
+      return
+    }
 
     // improve UX when the user has a very fast internet connection
     setTimeout(() => setIsLoadingTools(false), 350)
