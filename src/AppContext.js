@@ -25,13 +25,13 @@ export const AppStateProvider = ({ children }) => {
   const debouncedSearchInTagsOnly = useDebounce(searchInTagsOnly, 450)
 
   const getToolsByQuerie = async () => {
-    setIsLoadingTools(true)
+    // setIsLoadingTools(true)
     const querie = searchInTagsOnly
       ? `tags_like=${debouncedSearchQuerie}`
       : `q=${debouncedSearchQuerie}`
     const { data } = await getTools(querie)
     setToolsList([...data])
-    setIsLoadingTools(false)
+    // setIsLoadingTools(false)
   }
 
   useEffect(() => {

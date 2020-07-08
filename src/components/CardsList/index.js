@@ -38,11 +38,11 @@ const CardsList = ({ className, toolsList, isLoading }) => (
         ) : (
           <Card className={style.empty} type="flat">
             <Typography variant="body" element="div">
-              {`No results found ${(
-                <span role="img" aria-label="sad mood">
-                  😔
-                </span>
-              )}`}
+              No results found
+              {' '}
+              <span role="img" aria-label="sad mood">
+                😔
+              </span>
             </Typography>
           </Card>
         )}
