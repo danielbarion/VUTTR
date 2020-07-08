@@ -6,11 +6,12 @@ import Header from 'components/Header'
 import Container from 'components/Container'
 import CardsList from 'components/CardsList'
 import HeaderActions from 'components/HeaderActions'
+import highlight from 'utils/highlight'
 import style from './style.module.css'
 
 const HomePage = ({ context, toolsData }) => {
   const { setToolsList, setIsLoadingTools, getToolsByQuerie, state } = context
-  const { toolsList, isLoadingTools } = state
+  const { toolsList, isLoadingTools, searchInTagsOnly, searchQuerie } = state
 
   useEffect(() => {
     if (toolsData.length) {
@@ -20,6 +21,12 @@ const HomePage = ({ context, toolsData }) => {
       getToolsByQuerie()
     }
   }, [])
+
+  useEffect(() => {
+    if (searchInTagsOnly && !isLoadingTools) {
+      highlight(searchQuerie)
+    }
+  }, [isLoadingTools])
 
   /**
    * Page Meta Data
@@ -97,6 +104,8 @@ HomePage.propTypes = {
         }),
       ),
       isLoadingTools: PropTypes.bool.isRequired,
+      searchInTagsOnly: PropTypes.bool.isRequired,
+      searchQuerie: PropTypes.string.isRequired,
     }),
     setToolsList: PropTypes.func.isRequired,
     setIsLoadingTools: PropTypes.func.isRequired,

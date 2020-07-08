@@ -23,7 +23,12 @@ const CardsList = ({ className, toolsList, isLoading }) => (
               </Typography>
               <div className={style.tags}>
                 {item.tags.map((tag) => (
-                  <Typography key={tag} variant="bodyXS" element="span" className={style.tag}>
+                  <Typography
+                    key={tag}
+                    variant="bodyXS"
+                    element="span"
+                    className={classNames(style.tag, 'tag')}
+                  >
                     {`#${tag}`}
                   </Typography>
                 ))}
