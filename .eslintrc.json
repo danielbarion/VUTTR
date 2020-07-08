@@ -17,7 +17,16 @@
     }
   },
   "rules": {
-    "operator-linebreak": [2, "before"],
+    "operator-linebreak": [
+      2,
+      "after",
+      {
+        "overrides": {
+          "?": "before",
+          ":": "before"
+        }
+      }
+    ],
     "object-curly-newline": 0,
     "implicit-arrow-linebreak": 0,
     "semi": ["error", "never"],

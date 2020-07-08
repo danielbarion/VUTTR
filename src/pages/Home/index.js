@@ -9,13 +9,15 @@ import HeaderActions from 'components/HeaderActions'
 import style from './style.module.css'
 
 const HomePage = ({ context, toolsData }) => {
-  const { setToolsList, setIsLoadingTools, state } = context
+  const { setToolsList, setIsLoadingTools, getToolsByQuerie, state } = context
   const { toolsList, isLoadingTools } = state
 
   useEffect(() => {
     if (toolsData.length) {
       setToolsList([...toolsData])
       setIsLoadingTools(false)
+    } else {
+      getToolsByQuerie()
     }
   }, [])
 
@@ -98,6 +100,7 @@ HomePage.propTypes = {
     }),
     setToolsList: PropTypes.func.isRequired,
     setIsLoadingTools: PropTypes.func.isRequired,
+    getToolsByQuerie: PropTypes.func.isRequired,
   }).isRequired,
 }
 

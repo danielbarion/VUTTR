@@ -77,6 +77,7 @@ export const AppStateProvider = ({ children }) => {
         setToolsList,
         setIsLoadingTools,
         setSearchInTagsOnly,
+        getToolsByQuerie,
       }}
     >
       {children}
