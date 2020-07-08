@@ -36,7 +36,11 @@ const Checkbox = ({ className, labelClassName, type, value, onClick, label, disa
         </span>
       )}
       {label ? (
-        <Typography variant="body" className={classNames(style.label, labelClassName)}>
+        <Typography
+          variant="body"
+          element="span"
+          className={classNames(style.label, labelClassName)}
+        >
           {label}
         </Typography>
       ) : null}

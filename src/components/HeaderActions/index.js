@@ -9,7 +9,7 @@ import style from './style.module.css'
 
 const HeaderActions = ({ className, context }) => {
   const { state, setSearchQuerie, setSearchInTagsOnly } = context
-  const { searchQuerie, searchInTagsOnly } = state
+  const { searchQuerie, searchInTagsOnly, isLoadingTools } = state
 
   const handleChange = (e) => {
     setSearchQuerie(e.target.value)
@@ -29,6 +29,7 @@ const HeaderActions = ({ className, context }) => {
         onChange={handleChange}
         prefixIcon="Icon-Search-2px"
         className={style.searchField}
+        disabled={isLoadingTools}
       />
 
       <Checkbox
@@ -36,6 +37,7 @@ const HeaderActions = ({ className, context }) => {
         value={searchInTagsOnly}
         onClick={handleCheckboxClick}
         className={style.tagsCheckbox}
+        disabled={isLoadingTools}
       />
 
       <Button label="Add" iconClassName={style.addIcon} icon="Icon-Close-2px" iconSize="xs" />
