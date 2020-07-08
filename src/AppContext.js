@@ -39,13 +39,13 @@ export const AppStateProvider = ({ children }) => {
     const lastTime = performance.now()
 
     // don't penalize users with low internet connection (time is in milliseconds)
-    if (lastTime - initialTime >= 350) {
+    if (lastTime - initialTime >= 300) {
       setIsLoadingTools(false)
       return
     }
 
     // improve UX when the user has a very fast internet connection
-    setTimeout(() => setIsLoadingTools(false), 350)
+    setTimeout(() => setIsLoadingTools(false), 300)
   }
 
   useEffect(() => {
