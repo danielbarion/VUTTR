@@ -12,7 +12,7 @@ const CardsList = ({ className, toolsList, isLoading }) => (
       <CardsLoading amount={5} />
     ) : (
       <div className={classNames(style.cardsList, className)}>
-        {toolsList.length &&
+        {toolsList.length ? (
           toolsList.map((item) => (
             <Card key={item.id} className={style.toolCard} type="1">
               <Typography variant="header4" className={style.title}>
@@ -29,7 +29,18 @@ const CardsList = ({ className, toolsList, isLoading }) => (
                 ))}
               </div>
             </Card>
-          ))}
+          ))
+        ) : (
+          <Card className={style.empty} type="flat">
+            <Typography variant="body" element="div">
+              {`No results found ${(
+                <span role="img" aria-label="sad mood">
+                  😔
+                </span>
+              )}`}
+            </Typography>
+          </Card>
+        )}
       </div>
     )}
   </>
