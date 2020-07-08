@@ -10,7 +10,7 @@ import highlight from 'utils/highlight'
 import style from './style.module.css'
 
 const HomePage = ({ context, toolsData }) => {
-  const { setToolsList, setIsLoadingTools, getToolsByQuerie, state } = context
+  const { setToolsList, setIsLoadingTools, getToolsByQuerie, modalOpen, state } = context
   const { toolsList, isLoadingTools, searchInTagsOnly, searchQuerie } = state
 
   useEffect(() => {
@@ -27,6 +27,11 @@ const HomePage = ({ context, toolsData }) => {
       highlight(searchQuerie)
     }
   }, [isLoadingTools])
+
+  const handleClickAdd = () => {
+    console.log('add')
+    modalOpen(<CardsList toolsList={toolsList} isLoading={isLoadingTools} />)
+  }
 
   /**
    * Page Meta Data
@@ -75,7 +80,7 @@ const HomePage = ({ context, toolsData }) => {
 
       <Container className={style.mainContent} element="main">
         <Header className={style.header} />
-        <HeaderActions />
+        <HeaderActions onClickAdd={handleClickAdd} />
         <CardsList toolsList={toolsList} isLoading={isLoadingTools} />
       </Container>
     </div>
@@ -110,6 +115,7 @@ HomePage.propTypes = {
     setToolsList: PropTypes.func.isRequired,
     setIsLoadingTools: PropTypes.func.isRequired,
     getToolsByQuerie: PropTypes.func.isRequired,
+    modalOpen: PropTypes.func.isRequired,
   }).isRequired,
 }
 

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { WrapComponentWithAppStateConsumer } from 'AppContext'
 import Button from 'components/Button'
+import Typography from 'components/Typography'
 import style from './style.module.css'
 
 const Modal = ({
@@ -15,6 +16,7 @@ const Modal = ({
   contentClassName,
   closeButtonClassName,
   context,
+  title,
 }) => {
   const { state } = context
   const { modalContent } = state
@@ -70,16 +72,19 @@ const Modal = ({
       role="dialog"
     >
       <div className={classNames(style.wrapper, wrapperClassName)}>
-        <Button
-          className={classNames(style.closeButton, closeButtonClassName)}
-          prefixIcon="mono_cancel"
-          type="button"
-          display="circularMicro"
-          variant="tertiary"
-          icon="mono_cancel"
-          onClick={onClose}
-        />
+        <div className={style.header}>
+          <Typography className={style.title} variant="header4">
+            {title}
+          </Typography>
 
+          <Button
+            className={classNames(style.closeButton, closeButtonClassName)}
+            variant="quartiary"
+            icon="Icon-Close-2px"
+            iconSize="xs"
+            onClick={onClose}
+          />
+        </div>
         <div className={classNames(style.content, contentClassName)}>{modalContent}</div>
       </div>
     </div>
@@ -99,6 +104,7 @@ Modal.propTypes = {
   wrapperClassName: PropTypes.string,
   contentClassName: PropTypes.string,
   closeButtonClassName: PropTypes.string,
+  title: PropTypes.string,
 }
 
 Modal.defaultProps = {
@@ -108,6 +114,7 @@ Modal.defaultProps = {
   wrapperClassName: null,
   contentClassName: null,
   closeButtonClassName: null,
+  title: null,
 }
 
 export default WrapComponentWithAppStateConsumer(Modal)

@@ -7,7 +7,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: var(--depth-modal);
+  z-index: var(--vuttr-depth-modal);
   visibility: hidden;
   opacity: 0;
   transition: opacity 200ms ease, visibility 200ms ease, transform 200ms ease;
@@ -22,14 +22,14 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  background: var(--color-white);
+  background: var(--vuttr-color-white);
   margin: 0;
   max-width: 600px;
   width: 100%;
   height: 100%;
   min-height: 120px;
   box-sizing: border-box;
-  z-index: var(--depth-modal);
+  z-index: var(--vuttr-depth-modal);
   transform: scale(0.95);
   transition: opacity 200ms ease, visibility 200ms ease, transform 200ms ease;
   overflow: hidden;
@@ -39,31 +39,49 @@
   transform: scale(1);
 }
 
+.header {
+  position: relative;
+  display: grid;
+  grid-template-areas: 'title close';
+  grid-template-columns: auto 12px;
+  padding: 30px;
+}
+
+.title {
+  grid-area: 'title';
+}
+
+.closeButton {
+  grid-area: close;
+  z-index: var(--vuttr-depth-base);
+  height: var(--vuttr-spacing-sm);
+  width: var(--vuttr-spacing-sm);
+  padding: 0;
+  margin: 0;
+}
+
+.closeButton > span {
+  margin-right: 0;
+}
+
 .content {
   width: 100%;
   height: 100%;
   flex: 1;
-  padding: var(--spacing-xl);
+  padding: var(--vuttr-spacing-xl);
   box-sizing: border-box;
   overflow-y: auto;
-}
-
-.closeButton {
-  position: absolute;
-  right: var(--spacing-sm);
-  top: var(--spacing-sm);
-  margin: 0;
-  z-index: var(--depth-base);
+  scroll-behavior: smooth;
 }
 
 .scrollLocked {
-  padding-right: calc(var(--spacing-m) - 1px);
+  padding-right: calc(var(--vuttr-spacing-m) - 1px);
   overflow-y: hidden;
 }
 
 @media (min-width: 600px) {
   .wrapper {
-    border-radius: var(--border-radius-l);
+    border-radius: var(--vuttr-border-radius-l);
     max-height: 80vh;
     height: unset;
   }
@@ -76,12 +94,12 @@
 
 @media (min-width: 780px) {
   .container {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--vuttr-color-purple-not-mapped);
   }
 
   .wrapper {
     margin: 0 auto;
-    box-shadow: var(--shadow-1);
+    box-shadow: var(--vuttr-shadow-1);
     position: relative;
   }
 

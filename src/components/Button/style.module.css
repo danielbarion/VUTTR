@@ -29,7 +29,7 @@
 
 .primary.success {
   color: var(--vuttr-color-white);
-  background: var(--vuttr-color-green-no-mapped);
+  background: var(--vuttr-color-green-not-mapped);
 }
 
 .primary.danger {

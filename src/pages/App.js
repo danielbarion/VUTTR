@@ -24,7 +24,8 @@ const NProgressInit = () => {
 }
 
 const App = ({ Component, pageProps, context }) => {
-  const { modalClose } = context
+  const { modalClose, state } = context
+  const { modalOpened } = state
 
   const handleRouteChangeStart = (url) => {
     context.setLastUrl(url)
@@ -57,7 +58,7 @@ const App = ({ Component, pageProps, context }) => {
   return (
     <>
       <Component {...pageProps} />
-      <Modal onClose={modalClose} />
+      <Modal onClose={modalClose} opened={modalOpened} />
     </>
   )
 }

@@ -7,7 +7,7 @@ import Button from 'components/Button'
 import Checkbox from 'components/Checkbox'
 import style from './style.module.css'
 
-const HeaderActions = ({ className, context }) => {
+const HeaderActions = ({ className, context, onClickAdd }) => {
   const { state, setSearchQuerie, setSearchInTagsOnly } = context
   const { searchQuerie, searchInTagsOnly, isLoadingTools } = state
 
@@ -17,6 +17,10 @@ const HeaderActions = ({ className, context }) => {
 
   const handleCheckboxClick = () => {
     setSearchInTagsOnly(!searchInTagsOnly)
+  }
+
+  const handleClickAdd = () => {
+    onClickAdd()
   }
 
   return (
@@ -40,7 +44,13 @@ const HeaderActions = ({ className, context }) => {
         disabled={isLoadingTools}
       />
 
-      <Button label="Add" iconClassName={style.addIcon} icon="Icon-Close-2px" iconSize="xs" />
+      <Button
+        label="Add"
+        iconClassName={style.addIcon}
+        icon="Icon-Close-2px"
+        iconSize="xs"
+        onClick={handleClickAdd}
+      />
     </div>
   )
 }
@@ -56,6 +66,7 @@ HeaderActions.propTypes = {
     setSearchQuerie: PropTypes.func.isRequired,
     setSearchInTagsOnly: PropTypes.func.isRequired,
   }).isRequired,
+  onClickAdd: PropTypes.func.isRequired,
 }
 
 HeaderActions.defaultProps = {

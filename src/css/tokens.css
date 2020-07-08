@@ -184,7 +184,8 @@ body {
   --vuttr-size-container-width: 800px;
 
   /* custom colors */
-  --vuttr-color-green-no-mapped: #0dcb7d;
+  --vuttr-color-green-not-mapped: #0dcb7d;
+  --vuttr-color-purple-not-mapped: #170c3ae6;
 
   /* others */
   --vuttr-border-card: 1px solid var(--vuttr-color-darkest-white);
