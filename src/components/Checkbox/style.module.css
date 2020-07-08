@@ -14,7 +14,7 @@
 
 .icon {
   font-size: 30px;
-  color: var(--vuttr-color-darker-white);
+  color: var(--vuttr-color-darkest-white);
   margin-right: var(--vuttr-spacing-s);
 }
 
@@ -23,8 +23,11 @@
 }
 
 .checkbox[disabled],
-.checkbox[disabled] .label,
 .checkbox[disabled] .icon {
   pointer-events: none;
+  color: var(--vuttr-color-darkest-white);
+}
+
+.checkbox[disabled] .label {
   color: var(--vuttr-color-most-darkest-white);
 }
