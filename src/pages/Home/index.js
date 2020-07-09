@@ -29,8 +29,11 @@ const HomePage = ({ context, toolsData }) => {
   }, [isLoadingTools])
 
   const handleClickAdd = () => {
-    console.log('add')
     modalOpen(<CardsList toolsList={toolsList} isLoading={isLoadingTools} />)
+  }
+
+  const handleClickRemove = () => {
+    console.log('removed')
   }
 
   /**
@@ -81,7 +84,11 @@ const HomePage = ({ context, toolsData }) => {
       <Container className={style.mainContent} element="main">
         <Header className={style.header} />
         <HeaderActions onClickAdd={handleClickAdd} />
-        <CardsList toolsList={toolsList} isLoading={isLoadingTools} />
+        <CardsList
+          toolsList={toolsList}
+          isLoading={isLoadingTools}
+          onClickRemove={handleClickRemove}
+        />
       </Container>
     </div>
   )

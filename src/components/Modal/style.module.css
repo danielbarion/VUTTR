@@ -75,7 +75,7 @@
 }
 
 .scrollLocked {
-  padding-right: calc(var(--vuttr-spacing-m) - 1px);
+  /* padding-right: calc(var(--vuttr-spacing-m) - 1px); */
   overflow-y: hidden;
 }
 

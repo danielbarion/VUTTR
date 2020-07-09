@@ -8,8 +8,29 @@
   background-color: var(--vuttr-color-white);
 }
 
+.header {
+  display: grid;
+  grid-template-areas: 'title remove';
+  grid-template-columns: auto 87px;
+}
+
 .title {
+  grid-area: title;
   margin-bottom: var(--vuttr-spacing-s);
+}
+
+.remove {
+  grid-area: remove;
+}
+
+.removeButton {
+  padding: 0 0 0 var(--vuttr-spacing-s);
+}
+
+.removeButton > span {
+  margin-right: var(--vuttr-spacing-s);
+  display: flex;
+  justify-content: flex-end;
 }
 
 .description {

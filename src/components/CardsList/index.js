@@ -4,9 +4,10 @@ import classNames from 'classnames'
 import Typography from 'components/Typography'
 import Card from 'components/Card'
 import CardsLoading from 'components/CardsLoading'
+import Button from 'components/Button'
 import style from './style.module.css'
 
-const CardsList = ({ className, toolsList, isLoading }) => (
+const CardsList = ({ className, toolsList, isLoading, onClickRemove }) => (
   <>
     {isLoading ? (
       <CardsLoading amount={5} />
@@ -15,9 +16,24 @@ const CardsList = ({ className, toolsList, isLoading }) => (
         {toolsList.length ? (
           toolsList.map((item) => (
             <Card key={item.id} className={style.toolCard} type="1">
-              <Typography variant="header4" className={style.title}>
-                {item.title}
-              </Typography>
+              <div className={style.header}>
+                <Typography variant="header4" className={style.title}>
+                  {item.title}
+                </Typography>
+                <div className={style.remove}>
+                  {onClickRemove && (
+                    <Button
+                      className={classNames(style.removeButton)}
+                      variant="quartiary"
+                      display="danger"
+                      icon="Icon-Close-2px"
+                      iconSize="xxs"
+                      label="remove"
+                      onClick={onClickRemove}
+                    />
+                  )}
+                </div>
+              </div>
               <Typography variant="bodyS" className={style.description}>
                 {item.description}
               </Typography>
@@ -63,11 +79,13 @@ CardsList.propTypes = {
     }),
   ).isRequired,
   isLoading: PropTypes.bool,
+  onClickRemove: PropTypes.func,
 }
 
 CardsList.defaultProps = {
   className: null,
   isLoading: false,
+  onClickRemove: null,
 }
 
 export default CardsList
