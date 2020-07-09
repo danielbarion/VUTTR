@@ -5,7 +5,6 @@ import classNames from 'classnames'
 import { WrapComponentWithAppStateConsumer } from 'AppContext'
 import Button from 'components/Button'
 import Typography from 'components/Typography'
-import Icon from 'components/Icon'
 import style from './style.module.css'
 
 const Modal = ({
@@ -20,7 +19,6 @@ const Modal = ({
 }) => {
   const { state } = context
   const { modalContent, modalTitle } = state
-  const { title, icon } = modalTitle
 
   if (!modalContent) {
     return null
@@ -75,8 +73,7 @@ const Modal = ({
       <div className={classNames(style.wrapper, wrapperClassName)}>
         <div className={style.header}>
           <div className={style.title}>
-            <Icon className={classNames(style.icon)} icon={icon} size="xs" />
-            <Typography variant="header4">{title}</Typography>
+            <Typography variant="header4">{modalTitle}</Typography>
           </div>
 
           <Button
@@ -100,10 +97,7 @@ Modal.propTypes = {
   context: PropTypes.shape({
     state: PropTypes.shape({
       modalContent: PropTypes.element,
-      modalTitle: PropTypes.shape({
-        title: PropTypes.string,
-        icon: PropTypes.string,
-      }),
+      modalTitle: PropTypes.string,
     }),
   }).isRequired,
   className: PropTypes.string,

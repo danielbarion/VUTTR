@@ -29,14 +29,11 @@ const HomePage = ({ context, toolsData }) => {
   }, [isLoadingTools])
 
   const handleClickAdd = () => {
-    modalOpen(<CardsList toolsList={toolsList} isLoading={isLoadingTools} />)
+    modalOpen(<CardsList toolsList={toolsList} isLoading={isLoadingTools} />, 'Add new tool')
   }
 
   const handleClickRemove = () => {
-    modalOpen(<CardsList toolsList={toolsList} isLoading={isLoadingTools} />, {
-      title: 'Remove Tool',
-      icon: 'Icon-Close-2px',
-    })
+    modalOpen(<CardsList toolsList={toolsList} isLoading={isLoadingTools} />, 'Remove Tool')
   }
 
   /**

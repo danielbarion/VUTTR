@@ -16,7 +16,7 @@ export const AppStateProvider = ({ children }) => {
   const [isLoadingTools, setIsLoadingTools] = useState(true)
   const [modalOpened, setModalOpened] = useState(false)
   const [modalContent, setModalContent] = useState(null)
-  const [modalTitle, setModalTitle] = useState({ title: null, icon: null })
+  const [modalTitle, setModalTitle] = useState(null)
   const [lastUrl, setLastUrl] = useState(null)
   const [searchQuerie, setSearchQuerie] = useState('')
   const [searchInTagsOnly, setSearchInTagsOnly] = useState(false)
@@ -57,13 +57,13 @@ export const AppStateProvider = ({ children }) => {
     }
   }, [debouncedSearchQuerie, debouncedSearchInTagsOnly])
 
-  const modalOpen = (content, header) => {
+  const modalOpen = (content, title) => {
     setModalContent(content)
 
-    if (header) {
-      setModalTitle(header)
+    if (title) {
+      setModalTitle(title)
     } else {
-      setModalTitle({ title: null, icon: null })
+      setModalTitle(title)
     }
 
     window.setTimeout(() => {
