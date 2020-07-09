@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import Icon from '../Icon'
@@ -52,6 +52,7 @@ class FieldText extends React.Component {
       onSufixIconClick,
       tabIndex,
       className,
+      innerRef,
     } = this.props
 
     const hasPrefixIcon = Boolean(prefixIcon || prefixIconPath)
@@ -104,6 +105,7 @@ class FieldText extends React.Component {
             onChange={onChange}
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
+            ref={innerRef}
           />
 
           {hasSufixIcon ? (
@@ -146,6 +148,7 @@ FieldText.propTypes = {
   sufixIcon: PropTypes.string,
   sufixIconPath: PropTypes.string,
   onSufixIconClick: PropTypes.func,
+  innerRef: PropTypes.func,
 }
 
 FieldText.defaultProps = {
@@ -166,6 +169,7 @@ FieldText.defaultProps = {
   sufixIcon: null,
   sufixIconPath: null,
   onSufixIconClick: null,
+  innerRef: null,
 }
 
-export default FieldText
+export default forwardRef((props, ref) => <FieldText innerRef={ref} {...props} />)

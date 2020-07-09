@@ -11,8 +11,8 @@ const HeaderActions = ({ className, context, onClickAdd }) => {
   const { state, setSearchQuerie, setSearchInTagsOnly } = context
   const { searchQuerie, searchInTagsOnly, isLoadingTools } = state
 
-  const handleChange = (e) => {
-    setSearchQuerie(e.target.value)
+  const handleChange = (event) => {
+    setSearchQuerie(event.target.value)
   }
 
   const handleCheckboxClick = () => {
@@ -27,7 +27,6 @@ const HeaderActions = ({ className, context, onClickAdd }) => {
     <div className={classNames(style.headerActions, className)}>
       <FieldText
         name="name-1"
-        hint="Digite seu nome completo"
         placeholder="search"
         value={searchQuerie}
         onChange={handleChange}

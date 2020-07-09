@@ -6,6 +6,7 @@ import Header from 'components/Header'
 import Container from 'components/Container'
 import CardsList from 'components/CardsList'
 import HeaderActions from 'components/HeaderActions'
+import FormAddTool from 'components/FormAddTool'
 import highlight from 'utils/highlight'
 import style from './style.module.css'
 
@@ -29,7 +30,7 @@ const HomePage = ({ context, toolsData }) => {
   }, [isLoadingTools])
 
   const handleClickAdd = () => {
-    modalOpen(<CardsList toolsList={toolsList} isLoading={isLoadingTools} />, 'Add new tool')
+    modalOpen(<FormAddTool />, 'Add new tool')
   }
 
   const handleClickRemove = () => {
