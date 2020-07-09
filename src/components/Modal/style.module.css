@@ -48,7 +48,13 @@
 }
 
 .title {
-  grid-area: 'title';
+  grid-area: title;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: calc(var(--vuttr-spacing-xxs) + var(--vuttr-spacing-m));
 }
 
 .closeButton {
@@ -81,7 +87,7 @@
 
 @media (min-width: 600px) {
   .wrapper {
-    border-radius: var(--vuttr-border-radius-l);
+    border-radius: var(--vuttr-border-radius-special);
     max-height: 80vh;
     height: unset;
   }

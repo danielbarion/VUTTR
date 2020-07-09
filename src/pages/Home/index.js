@@ -33,7 +33,10 @@ const HomePage = ({ context, toolsData }) => {
   }
 
   const handleClickRemove = () => {
-    console.log('removed')
+    modalOpen(<CardsList toolsList={toolsList} isLoading={isLoadingTools} />, {
+      title: 'Remove Tool',
+      icon: 'Icon-Close-2px',
+    })
   }
 
   /**
