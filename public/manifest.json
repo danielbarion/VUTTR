@@ -3,17 +3,17 @@
   "name": "Very Usefull Tools to Remember",
   "icons": [
     {
-      "src": "favicon.png",
+      "src": "static/img/app-64.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "app-192.png",
+      "src": "static/img/app-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "app-512.png",
+      "src": "static/img/app-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
