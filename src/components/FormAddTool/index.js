@@ -75,10 +75,10 @@ const FormAddTool = ({ className }) => {
           required
         /> */}
 
+        <FieldTag />
+
         <Button label="Add Tool" type="submit" />
       </form>
-
-      <FieldTag />
     </div>
   )
 }

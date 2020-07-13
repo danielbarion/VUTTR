@@ -1,61 +1,67 @@
 .container {
-  background: white;
-  border: 1px solid #d6d6d6;
-  border-radius: 2px;
   display: flex;
   flex-wrap: wrap;
-  padding: 5px 5px 0;
+  background: var(--vuttr-color-darker-white);
+  border: 1px solid var(--vuttr-color-darkest-white);
+  border-radius: var(--vuttr-border-radius-special);
+  min-height: var(--vuttr-size-field);
+  cursor: text;
 }
 
-.container input {
+.input {
   border: none;
   width: 100%;
   box-sizing: border-box;
   outline: none;
+  background-color: var(--vuttr-color-darker-white);
+  height: var(--vuttr-size-field);
+  font-size: var(--vuttr-font-size-special-s);
+  font-weight: var(--vuttr-font-weight-regular);
+  letter-spacing: 0.4px;
 }
 
 .tags {
   display: inline-flex;
+  align-items: center;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
   width: 100%;
 }
 
-.tags li {
-  align-items: center;
-  background: #85a3bf;
-  border-radius: 2px;
-  color: white;
+.tag {
   display: flex;
-  font-weight: 300;
-  list-style: none;
-  margin-bottom: 5px;
-  margin-right: 5px;
-  padding: 5px 10px;
-}
-
-.tags li button {
   align-items: center;
-  appearance: none;
-  background: #333;
-  border: none;
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
-  display: inline-flex;
-  font-size: 12px;
-  height: 15px;
-  justify-content: center;
-  line-height: 0;
-  margin-left: 8px;
-  padding: 0;
-  transform: rotate(45deg);
-  width: 15px;
+  list-style: none;
+  background: var(--vuttr-color-white);
+  border: 1px solid var(--vuttr-color-darkest-white);
+  border-radius: var(--vuttr-border-radius-special);
+  height: var(--vuttr-size-tag);
+  padding-left: var(--vuttr-spacing-special-button-bottom);
+  padding-right: var(--vuttr-spacing-sm);
+  overflow: hidden;
 }
 
-.tags li.input {
+.tagLabel {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: var(--vuttr-spacing-special-field-horizontal);
+}
+
+.tagInput {
+  display: flex;
+  width: auto;
+  max-width: 100%;
+  min-width: fit-content;
+}
+
+.tag.tagInput {
   background: none;
   flex-grow: 1;
   padding: 0;
+}
+
+.removeIcon {
+  margin-right: 0;
 }

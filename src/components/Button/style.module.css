@@ -239,7 +239,7 @@
 }
 
 /* icon */
-.icon {
+.hasLabel .icon {
   margin-right: var(--vuttr-spacing-m);
 }
 

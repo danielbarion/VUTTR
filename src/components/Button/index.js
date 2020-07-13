@@ -21,6 +21,7 @@ const Button = ({
 }) => {
   const buttonClassNames = classNames(style.button, style[variant], style[display], {
     [style.disabled]: disabled,
+    [style.hasLabel]: Boolean(label),
   })
 
   return (

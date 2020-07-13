@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-// import FieldText from 'components/FieldText'
+import Typography from 'components/Typography'
+import Button from 'components/Button'
 import style from './style.module.css'
 
 const FieldTag = ({ className }) => {
@@ -34,24 +35,36 @@ const FieldTag = ({ className }) => {
     }
   }
 
+  const handleOnClick = () => {
+    if (window) {
+      const inputElement = document.querySelector(`.${style.input}`)
+      inputElement.focus()
+    }
+  }
+
   return (
-    <div className={classNames(style.container, className)}>
+    // eslint-disable-next-line max-len
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
+    <div className={classNames(style.container, className)} onClick={handleOnClick}>
       <ul className={style.tags}>
         {tags.map((tag, index) => (
-          <li key={tag}>
-            {tag}
-            <button
+          <li key={tag} className={style.tag}>
+            <Typography variant="body" element="span" className={style.tagLabel}>
+              {tag}
+            </Typography>
+            <Button
               type="button"
-              onClick={() => {
-                removeTag(index)
-              }}
-            >
-              +
-            </button>
+              iconClassName={style.removeIcon}
+              variant="quartiary"
+              icon="Icon-Close-2px"
+              iconSize="xs"
+              onClick={() => removeTag(index)}
+            />
           </li>
         ))}
-        <li className={style.input}>
+        <li className={style.tagInput}>
           <input
+            className={style.input}
             value={inputValue}
             type="text"
             onKeyDown={inputKeyDown}

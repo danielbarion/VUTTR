@@ -182,6 +182,7 @@ body {
   --vuttr-size-button: 50px;
   --vuttr-size-button-small: 35px;
   --vuttr-size-container-width: 800px;
+  --vuttr-size-tag: 42px;
 
   /* custom colors */
   --vuttr-color-green-not-mapped: #0dcb7d;
