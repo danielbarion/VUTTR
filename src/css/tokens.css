@@ -98,6 +98,8 @@ body {
   --vuttr-spacing-special-field-bottom: 12px;
   --vuttr-spacing-special-field-horizontal: 21px;
   --vuttr-spacing-special-field-label: 20px;
+  --vuttr-spacing-special-button-remove-tool-icon: 10px;
+  --vuttr-spacing-special-tags-right: 7px;
 
   /* outside shadow */
   --vuttr-shadow-1: 0 4px 8px rgba(0, 0, 0, 0.15);

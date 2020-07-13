@@ -65,17 +65,13 @@ const FormAddTool = ({ className }) => {
           required
         />
 
-        {/* <FieldText
+        <FieldTag
           name="tags"
           label="Tags"
           placeholder="The Tags of tool on the card"
-          value={toolDescriptionValue}
-          onChange={handleChangeValue}
           autoComplete="off"
           required
-        /> */}
-
-        <FieldTag />
+        />
 
         <Button label="Add Tool" type="submit" />
       </form>

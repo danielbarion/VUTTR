@@ -5,7 +5,7 @@ import Typography from 'components/Typography'
 import Button from 'components/Button'
 import style from './style.module.css'
 
-const FieldTag = ({ className }) => {
+const FieldTag = ({ className, label, name }) => {
   const [tags, setTags] = React.useState(['Tags', 'Input'])
   const [inputValue, setInputValue] = useState('')
 
@@ -54,6 +54,7 @@ const FieldTag = ({ className }) => {
             </Typography>
             <Button
               type="button"
+              className={style.button}
               iconClassName={style.removeIcon}
               variant="quartiary"
               icon="Icon-Close-2px"
@@ -63,13 +64,17 @@ const FieldTag = ({ className }) => {
           </li>
         ))}
         <li className={style.tagInput}>
-          <input
-            className={style.input}
-            value={inputValue}
-            type="text"
-            onKeyDown={inputKeyDown}
-            onChange={handleOnChange}
-          />
+          <label className={style.field} htmlFor={`field-${name}`}>
+            {label && <span className={style.label}>{label}</span>}
+            <input
+              id={`field-${name}`}
+              className={style.input}
+              value={inputValue}
+              type="text"
+              onKeyDown={inputKeyDown}
+              onChange={handleOnChange}
+            />
+          </label>
         </li>
       </ul>
     </div>
@@ -78,10 +83,13 @@ const FieldTag = ({ className }) => {
 
 FieldTag.propTypes = {
   className: PropTypes.string,
+  label: PropTypes.string,
+  name: PropTypes.string.isRequired,
 }
 
 FieldTag.defaultProps = {
   className: null,
+  label: '',
 }
 
 export default FieldTag
