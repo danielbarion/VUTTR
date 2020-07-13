@@ -33,6 +33,7 @@ const HeaderActions = ({ className, context, onClickAdd }) => {
         prefixIcon="Icon-Search-2px"
         className={style.searchField}
         disabled={isLoadingTools}
+        autoComplete="off"
       />
 
       <Checkbox

@@ -53,6 +53,7 @@ class FieldText extends React.Component {
       tabIndex,
       className,
       innerRef,
+      ...rest
     } = this.props
 
     const hasPrefixIcon = Boolean(prefixIcon || prefixIconPath)
@@ -106,6 +107,7 @@ class FieldText extends React.Component {
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
             ref={innerRef}
+            {...rest}
           />
 
           {hasSufixIcon ? (

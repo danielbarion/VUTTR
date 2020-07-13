@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import FieldText from 'components/FieldText'
-import Button from 'components/Button'
 import classNames from 'classnames'
+import Button from 'components/Button'
+import FieldText from 'components/FieldText'
+import FieldTag from 'components/FieldTag'
 import style from './style.module.css'
 
 const FormAddTool = ({ className }) => {
@@ -36,7 +37,7 @@ const FormAddTool = ({ className }) => {
       <form onSubmit={handleSubmit}>
         <FieldText
           name="title"
-          label="Tool Name"
+          label="Name"
           placeholder="The title of tool on the card"
           value={toolTitleValue}
           onChange={handleChangeValue}
@@ -46,35 +47,38 @@ const FormAddTool = ({ className }) => {
 
         <FieldText
           name="link"
-          label="Tool Link"
+          label="Link"
           placeholder="The link of tool on the card"
           value={toolLinkValue}
           onChange={handleChangeValue}
           autoComplete="off"
+          required
         />
 
         <FieldText
           name="description"
-          label="Tool Description"
+          label="Description"
           placeholder="The description of tool on the card"
           value={toolDescriptionValue}
           onChange={handleChangeValue}
           autoComplete="off"
+          required
         />
 
         {/* <FieldText
-            name="tags"
-            label="Tags"
-            placeholder="The tags of tool on the card"
-            value={toolTitleValue}
-            onChange={handleChangeValue}
-            ref={register({ required: true })}
-            error={toolNameErrorValue}
-            autoComplete="off"
-          /> */}
+          name="tags"
+          label="Tags"
+          placeholder="The Tags of tool on the card"
+          value={toolDescriptionValue}
+          onChange={handleChangeValue}
+          autoComplete="off"
+          required
+        /> */}
 
         <Button label="Add Tool" type="submit" />
       </form>
+
+      <FieldTag />
     </div>
   )
 }

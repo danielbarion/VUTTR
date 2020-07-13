@@ -1,0 +1,170 @@
+/* stylelint-disable declaration-no-important, no-descending-specificity */
+
+.container {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  transition: all 200ms;
+  position: relative;
+  padding-bottom: var(--vuttr-spacing-l);
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  left: var(--vuttr-spacing-m);
+  color: var(--vuttr-color-ink);
+  font-weight: var(--vuttr-font-weight-semibold);
+  font-size: var(--vuttr-font-size-special-field);
+  padding-bottom: var(--vuttr-spacing-special-field-label);
+  letter-spacing: 0.4px;
+}
+
+.focused .label {
+  color: var(--vuttr-color-ink);
+}
+
+.select {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none !important;
+}
+
+.container.success .select {
+  border: 1px solid var(--vuttr-color-green) !important;
+}
+
+.supportText {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+  margin: 0;
+  padding-top: var(--vuttr-spacing-xxs);
+  font: var(--font-field-support);
+  color: var(--vuttr-color-light-ink);
+  letter-spacing: 0.36px;
+  font-size: var(--vuttr-font-size-special-field-support-text);
+}
+
+.disabled .supportText {
+  color: var(--vuttr-color-lighter-ink);
+}
+
+.error .supportText,
+.error .label {
+  color: var(--vuttr-color-red);
+}
+
+/* global styles */
+:global(.select__control) {
+  width: 100%;
+  padding: 0 var(--vuttr-spacing-special-field-label) !important;
+  margin: 0;
+  font-size: var(--vuttr-font-size-special-field);
+  font-weight: var(--vuttr-font-weight-regular);
+  color: var(--vuttr-color-lighter-ink) !important;
+  outline: none !important;
+  height: var(--vuttr-size-field) !important;
+  border-radius: var(--vuttr-border-radius-special) !important;
+  background-color: var(--vuttr-color-darker-white) !important;
+  border: 1px solid var(--vuttr-color-darkest-white) !important;
+}
+
+:global(.select__control--is-focused) {
+  outline: none !important;
+  border-color: var(--vuttr-color-darkest-white) !important;
+  border-color: var(--vuttr-color-most-darkest-white) !important;
+  box-shadow: none !important;
+}
+
+:global(.select__control--menu-is-open .select__dropdown-indicator) {
+  transform: rotate(180deg);
+}
+
+.error :global(.select__control) {
+  border-color: var(--vuttr-color-red) !important;
+}
+
+.error :global(.select__control:hover),
+.error :global(.select__control:focus),
+.error :global(.select__control--is-focused) {
+  box-shadow: 0 0 0 1px var(--vuttr-color-red) !important;
+  border-color: var(--vuttr-color-red) !important;
+}
+
+:global(.select__value-container) {
+  box-sizing: border-box !important;
+  padding: 0 !important;
+}
+
+:global(.select__value-container > div) {
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+:global(.select__placeholder) {
+  margin: 0 !important;
+  color: var(--vuttr-color-lighter-ink) !important;
+}
+
+.error :global(.select__placeholder) {
+  color: var(--vuttr-color-red) !important;
+}
+
+:global(.select__single-value),
+:global(.select__input input) {
+  color: var(--vuttr-color-ink) !important;
+  white-space: nowrap;
+  height: var(--vuttr-size-field) !important;
+}
+
+:global(.select__indicator-separator) {
+  display: none !important;
+  padding-right: 0 !important;
+}
+
+:global(.select__menu) {
+  z-index: 10000 !important; /** I Don't like it **/
+  background-color: var(--vuttr-color-white) !important;
+}
+
+:global(.select__menu > div) {
+  padding: 0 !important;
+}
+
+:global(.select__menu-notice) {
+  height: var(--vuttr-size-field);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+:global(.select__option) {
+  display: flex !important;
+  align-items: center !important;
+  align-self: center !important;
+  padding-left: var(--vuttr-spacing-special-field-label) !important;
+  height: var(--vuttr-size-field);
+}
+
+:global(.select__option--is-focused),
+:global(.select__option--is-selected) {
+  color: var(--vuttr-color-ink) !important;
+  background-color: var(--vuttr-color-darker-whitet) !important;
+
+  /* border: none !important; */
+}
+
+:global(.select_indicator) {
+  padding: 0 !important;
+}
+
+:global(.select__dropdown-indicator) {
+  color: var(--vuttr-color-darker-whitet) !important;
+  transition: transform 200ms ease;
+}
