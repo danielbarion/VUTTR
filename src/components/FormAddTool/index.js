@@ -10,6 +10,7 @@ const FormAddTool = ({ className }) => {
   const [toolTitleValue, setToolTitleValue] = useState('')
   const [toolLinkValue, setToolLinkValue] = useState('')
   const [toolDescriptionValue, setToolDescriptionValue] = useState('')
+  const [tags, setTags] = React.useState([])
 
   /**
    * Handle Input Values
@@ -29,7 +30,6 @@ const FormAddTool = ({ className }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log('submited')
   }
 
   return (
@@ -70,10 +70,14 @@ const FormAddTool = ({ className }) => {
           label="Tags"
           placeholder="The Tags of tool on the card"
           autoComplete="off"
+          tags={tags}
+          setTags={setTags}
           required
         />
 
-        <Button label="Add Tool" type="submit" />
+        <div className={style.formFooter}>
+          <Button label="Add Tool" type="submit" />
+        </div>
       </form>
     </div>
   )

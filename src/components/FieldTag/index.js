@@ -5,8 +5,7 @@ import Typography from 'components/Typography'
 import Button from 'components/Button'
 import style from './style.module.css'
 
-const FieldTag = ({ className, label, name }) => {
-  const [tags, setTags] = React.useState(['Tags', 'Input'])
+const FieldTag = ({ className, label, name, tags, setTags, placeholder, required }) => {
   const [inputValue, setInputValue] = useState('')
 
   const removeTag = (index) => {
@@ -65,7 +64,12 @@ const FieldTag = ({ className, label, name }) => {
         ))}
         <li className={style.tagInput}>
           <label className={style.field} htmlFor={`field-${name}`}>
-            {label && <span className={style.label}>{label}</span>}
+            {label && (
+              <span className={style.label}>
+                {label}
+                {required ? <span className={style.required}>*</span> : null}
+              </span>
+            )}
             <input
               id={`field-${name}`}
               className={style.input}
@@ -73,6 +77,7 @@ const FieldTag = ({ className, label, name }) => {
               type="text"
               onKeyDown={inputKeyDown}
               onChange={handleOnChange}
+              placeholder={placeholder}
             />
           </label>
         </li>
@@ -85,11 +90,17 @@ FieldTag.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  setTags: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+  required: PropTypes.bool,
 }
 
 FieldTag.defaultProps = {
   className: null,
   label: '',
+  placeholder: '',
+  required: false,
 }
 
 export default FieldTag

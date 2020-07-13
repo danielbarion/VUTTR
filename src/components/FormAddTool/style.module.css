@@ -1,26 +1,4 @@
-.card {
+.formFooter {
   display: flex;
-  flex-direction: column;
-  border-radius: var(--vuttr-border-radius-special);
-  border: var(--vuttr-border-card);
-  height: auto;
-  padding: var(--be-spacing-m);
-  background: var(--be-color-white);
-  box-shadow: var(--be-shadow-raised);
-}
-
-.type-flat {
-  box-shadow: var(--vuttr-shadow-flat);
-}
-.type-1 {
-  box-shadow: var(--vuttr-shadow-elevation-1);
-}
-.type-2 {
-  box-shadow: var(--vuttr-shadow-elevation-2);
-}
-.type-3 {
-  box-shadow: var(--vuttr-shadow-elevation-3);
-}
-.type-4 {
-  box-shadow: var(--vuttr-shadow-elevation-4);
+  justify-content: flex-end;
 }
