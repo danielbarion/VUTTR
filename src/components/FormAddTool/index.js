@@ -4,13 +4,14 @@ import classNames from 'classnames'
 import Button from 'components/Button'
 import FieldText from 'components/FieldText'
 import FieldTag from 'components/FieldTag'
+import { addTools } from 'utils/api'
 import style from './style.module.css'
 
-const FormAddTool = ({ className }) => {
+const FormAddTool = ({ className, onFormSuccess }) => {
   const [toolTitleValue, setToolTitleValue] = useState('')
   const [toolLinkValue, setToolLinkValue] = useState('')
   const [toolDescriptionValue, setToolDescriptionValue] = useState('')
-  const [tags, setTags] = React.useState([])
+  const [toolTags, setToolTags] = React.useState([])
 
   /**
    * Handle Input Values
@@ -28,8 +29,21 @@ const FormAddTool = ({ className }) => {
     formUtils[name]()
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
+
+    const data = {
+      title: toolTitleValue,
+      link: toolLinkValue,
+      description: toolDescriptionValue,
+      tags: toolTags,
+    }
+
+    const { request } = await addTools(data)
+
+    if (request.status === 201 && onFormSuccess) {
+      onFormSuccess()
+    }
   }
 
   return (
@@ -70,8 +84,8 @@ const FormAddTool = ({ className }) => {
           label="Tags"
           placeholder="The Tags of tool on the card"
           autoComplete="off"
-          tags={tags}
-          setTags={setTags}
+          tags={toolTags}
+          setTags={setToolTags}
           required
         />
 
@@ -85,10 +99,12 @@ const FormAddTool = ({ className }) => {
 
 FormAddTool.propTypes = {
   className: PropTypes.string,
+  onFormSuccess: PropTypes.func,
 }
 
 FormAddTool.defaultProps = {
   className: null,
+  onFormSuccess: null,
 }
 
 export default FormAddTool

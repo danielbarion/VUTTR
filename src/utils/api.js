@@ -44,3 +44,13 @@ export const getTools = async (querie = '') =>
     url: `/tools?${querie}`,
     method: 'GET',
   })
+
+/**
+ * Add tools into API
+ */
+export const addTools = async (data) =>
+  request({
+    url: '/tools',
+    method: 'POST',
+    data,
+  })

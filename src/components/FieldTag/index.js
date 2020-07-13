@@ -23,6 +23,18 @@ const FieldTag = ({ className, label, name, tags, setTags, placeholder, required
     const { value } = event.target
     const { key } = event
 
+    /**
+     * Prevent submit form when input tags
+     * is focused and we only want to add a new tag
+     */
+    if (key === 'Enter' && window) {
+      const inputElement = document.querySelector(`.${style.input}`)
+
+      if (document.activeElement === inputElement) {
+        event.preventDefault()
+      }
+    }
+
     if (key === 'Enter' && value) {
       if (tags.find((tag) => tag.toLowerCase() === value.toLowerCase())) {
         return

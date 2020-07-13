@@ -11,7 +11,14 @@ import highlight from 'utils/highlight'
 import style from './style.module.css'
 
 const HomePage = ({ context, toolsData }) => {
-  const { setToolsList, setIsLoadingTools, getToolsByQuerie, modalOpen, state } = context
+  const {
+    setToolsList,
+    setIsLoadingTools,
+    getToolsByQuerie,
+    modalOpen,
+    modalClose,
+    state,
+  } = context
   const { toolsList, isLoadingTools, searchInTagsOnly, searchQuerie } = state
 
   useEffect(() => {
@@ -29,8 +36,13 @@ const HomePage = ({ context, toolsData }) => {
     }
   }, [isLoadingTools])
 
+  const handleFormSubmit = () => {
+    modalClose()
+    getToolsByQuerie()
+  }
+
   const handleClickAdd = () => {
-    modalOpen(<FormAddTool />, 'Add new tool')
+    modalOpen(<FormAddTool onFormSuccess={handleFormSubmit} />, 'Add new tool')
   }
 
   const handleClickRemove = () => {
@@ -124,6 +136,7 @@ HomePage.propTypes = {
     setIsLoadingTools: PropTypes.func.isRequired,
     getToolsByQuerie: PropTypes.func.isRequired,
     modalOpen: PropTypes.func.isRequired,
+    modalClose: PropTypes.func.isRequired,
   }).isRequired,
 }
 
