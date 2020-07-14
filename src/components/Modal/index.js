@@ -73,7 +73,9 @@ const Modal = ({
       <div className={classNames(style.wrapper, wrapperClassName)}>
         <div className={style.header}>
           <div className={style.title}>
-            <Typography variant="header4">{modalTitle}</Typography>
+            <Typography variant="header4" element="span">
+              {modalTitle}
+            </Typography>
           </div>
 
           <Button

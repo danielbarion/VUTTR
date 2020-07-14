@@ -100,6 +100,7 @@ body {
   --vuttr-spacing-special-field-label: 20px;
   --vuttr-spacing-special-button-remove-tool-icon: 10px;
   --vuttr-spacing-special-tags-right: 7px;
+  --vuttr-spacing-special-modal-header: 30px;
 
   /* outside shadow */
   --vuttr-shadow-1: 0 4px 8px rgba(0, 0, 0, 0.15);

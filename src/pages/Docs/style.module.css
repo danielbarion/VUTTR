@@ -38,5 +38,18 @@
 .card {
   max-width: 300px;
   text-align: justify;
-  padding: 1rem;
+}
+
+.toasts {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.toasts > div {
+  margin: 12px;
+}
+
+.toast {
+  width: 489px;
+  text-align: justify;
 }

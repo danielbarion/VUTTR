@@ -44,7 +44,7 @@
   display: grid;
   grid-template-areas: 'title close';
   grid-template-columns: auto 12px;
-  padding: 30px;
+  padding: var(--vuttr-spacing-special-modal-header);
 }
 
 .title {

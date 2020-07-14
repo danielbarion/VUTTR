@@ -5,6 +5,7 @@ import Card from 'components/Card'
 import Container from 'components/Container'
 import FieldText from 'components/FieldText'
 import Icon from 'components/Icon'
+import Toast from 'components/Toast'
 import style from './style.module.css'
 
 const DocsPage = () => {
@@ -293,7 +294,7 @@ const DocsPage = () => {
               required
             />
             <FieldText
-              name="name-1"
+              name="name-5"
               label="Input here"
               placeholder="Optional..."
               // hint="Digite seu nome completo"
@@ -302,7 +303,7 @@ const DocsPage = () => {
               prefixIcon="Icon-Search-2px"
             />
             <FieldText
-              name="name-2"
+              name="name-6"
               label="Input here"
               placeholder="Optional..."
               // hint="Digite seu nome completo"
@@ -312,7 +313,7 @@ const DocsPage = () => {
               required
             />
             <FieldText
-              name="name-3"
+              name="name-7"
               label="Input here"
               placeholder="Optional..."
               error="Error message comes here"
@@ -321,7 +322,7 @@ const DocsPage = () => {
               prefixIcon="Icon-Search-2px"
             />
             <FieldText
-              name="name-4"
+              name="name-8"
               label="Input here"
               placeholder="Optional..."
               error="Error message comes here"
@@ -368,6 +369,28 @@ const DocsPage = () => {
             non accumsan sapien auctor a. Suspendisse non tempus purus. Duis tellus tellus, rutrum
             sit amet pretium a, blandit ac magna.
           </Card>
+        </div>
+        <div className={style.toasts}>
+          <Toast className={style.toast} title="lorem ipsum dolor sit amet">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed porta nunc, at
+            posuere nulla. Ut sit amet dui non mi scelerisque commodo. Proin ullamcorper eros lacus,
+          </Toast>
+          <Toast className={style.toast} title="lorem ipsum dolor sit amet">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed porta nunc, at
+            posuere nulla. Ut sit amet dui non mi scelerisque commodo. Proin ullamcorper eros lacus,
+          </Toast>
+          <Toast className={style.toast} title="lorem ipsum dolor sit amet">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed porta nunc, at
+            posuere nulla. Ut sit amet dui non mi scelerisque commodo. Proin ullamcorper eros lacus,
+          </Toast>
+          <Toast className={style.toast} title="lorem ipsum dolor sit amet">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed porta nunc, at
+            posuere nulla. Ut sit amet dui non mi scelerisque commodo. Proin ullamcorper eros lacus,
+          </Toast>
+          <Toast className={style.toast} title="lorem ipsum dolor sit amet">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed porta nunc, at
+            posuere nulla. Ut sit amet dui non mi scelerisque commodo. Proin ullamcorper eros lacus,
+          </Toast>
         </div>
       </Container>
     </div>

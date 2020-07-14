@@ -4,9 +4,8 @@
   border-radius: var(--vuttr-border-radius-special);
   border: var(--vuttr-border-card);
   height: auto;
-  padding: var(--be-spacing-m);
-  background: var(--be-color-white);
-  box-shadow: var(--be-shadow-raised);
+  padding: var(--vuttr-spacing-m);
+  background: var(--vuttr-color-white);
 }
 
 .type-flat {
