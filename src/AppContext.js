@@ -11,6 +11,14 @@ export const WrapComponentWithAppStateConsumer = (Component) => (props) => (
   </AppContext.Consumer>
 )
 
+const toast = {
+  id: 1,
+  title: 'lorem ipsum dolor sit amet',
+  type: 'neutral',
+  content:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed porta nunc, at posuere nulla.Ut sit amet dui non mi scelerisque commodo.Proin ullamcorper eros lacus',
+}
+
 export const AppStateProvider = ({ children }) => {
   const [appInitialized, setAppInitialized] = useState(false)
   const [isLoadingTools, setIsLoadingTools] = useState(true)
@@ -21,6 +29,7 @@ export const AppStateProvider = ({ children }) => {
   const [searchQuerie, setSearchQuerie] = useState('')
   const [searchInTagsOnly, setSearchInTagsOnly] = useState(false)
   const [toolsList, setToolsList] = useState([])
+  const [toastList, setToastList] = useState([toast])
 
   const debouncedSearchQuerie = useDebounce(searchQuerie, 450)
   const debouncedSearchInTagsOnly = useDebounce(searchInTagsOnly, 450)
@@ -79,6 +88,17 @@ export const AppStateProvider = ({ children }) => {
     }, 200) // timeout needed to perform css transitions
   }
 
+  /**
+   * Add toast into toast's list
+   * @param { Object } toastData
+   */
+  const showToast = (toastData) => {
+    const lastId = toastList[toastList.length - 1].id
+    const toastId = lastId + 1
+
+    setToastList([...toastList, { ...toastData, id: toastId }])
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -91,6 +111,7 @@ export const AppStateProvider = ({ children }) => {
           isLoadingTools,
           searchInTagsOnly,
           modalTitle,
+          toastList,
         },
         modalOpen,
         modalClose,
@@ -101,6 +122,7 @@ export const AppStateProvider = ({ children }) => {
         setSearchInTagsOnly,
         setModalTitle,
         getToolsByQuerie,
+        showToast,
       }}
     >
       {children}

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import NProgress from 'nprogress'
 import { WrapComponentWithAppStateConsumer } from 'AppContext'
 import Modal from 'components/Modal'
+import Toast from 'components/Toast'
 import 'css/reset.css'
 import 'css/tokens.css'
 import 'css/index.css'
@@ -25,7 +26,7 @@ const NProgressInit = () => {
 
 const App = ({ Component, pageProps, context }) => {
   const { modalClose, state } = context
-  const { modalOpened } = state
+  const { modalOpened, toastList } = state
 
   const handleRouteChangeStart = (url) => {
     context.setLastUrl(url)
@@ -59,6 +60,11 @@ const App = ({ Component, pageProps, context }) => {
     <>
       <Component {...pageProps} />
       <Modal onClose={modalClose} opened={modalOpened} />
+      {toastList.map((toast) => (
+        <Toast key={toast.id} title={toast.title} type={toast.type}>
+          {toast.content}
+        </Toast>
+      ))}
     </>
   )
 }
