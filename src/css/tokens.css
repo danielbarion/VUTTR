@@ -101,6 +101,8 @@ body {
   --vuttr-spacing-special-button-remove-tool-icon: 10px;
   --vuttr-spacing-special-tags-right: 7px;
   --vuttr-spacing-special-modal-header: 30px;
+  --vuttr-spacing-special-toast-content-margin-bottom: 30px;
+  --vuttr-spacing-special-toast-type-icon-right: 35px;
 
   /* outside shadow */
   --vuttr-shadow-1: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -186,6 +188,7 @@ body {
   --vuttr-size-button-small: 35px;
   --vuttr-size-container-width: 800px;
   --vuttr-size-tag: 42px;
+  --vuttr-size-toast-width: 489px;
 
   /* custom colors */
   --vuttr-color-green-not-mapped: #0dcb7d;

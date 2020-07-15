@@ -375,19 +375,19 @@ const DocsPage = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed porta nunc, at
             posuere nulla. Ut sit amet dui non mi scelerisque commodo. Proin ullamcorper eros lacus,
           </Toast>
-          <Toast className={style.toast} title="lorem ipsum dolor sit amet">
+          <Toast className={style.toast} title="lorem ipsum dolor sit amet" type="warning">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed porta nunc, at
             posuere nulla. Ut sit amet dui non mi scelerisque commodo. Proin ullamcorper eros lacus,
           </Toast>
-          <Toast className={style.toast} title="lorem ipsum dolor sit amet">
+          <Toast className={style.toast} title="lorem ipsum dolor sit amet" type="error">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed porta nunc, at
             posuere nulla. Ut sit amet dui non mi scelerisque commodo. Proin ullamcorper eros lacus,
           </Toast>
-          <Toast className={style.toast} title="lorem ipsum dolor sit amet">
+          <Toast className={style.toast} title="lorem ipsum dolor sit amet" type="success">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed porta nunc, at
             posuere nulla. Ut sit amet dui non mi scelerisque commodo. Proin ullamcorper eros lacus,
           </Toast>
-          <Toast className={style.toast} title="lorem ipsum dolor sit amet">
+          <Toast className={style.toast} title="lorem ipsum dolor sit amet" type="info">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed porta nunc, at
             posuere nulla. Ut sit amet dui non mi scelerisque commodo. Proin ullamcorper eros lacus,
           </Toast>

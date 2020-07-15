@@ -1,12 +1,27 @@
-.toast {
-  display: flex;
-  flex-direction: column;
+.container {
+  display: grid;
+  grid-template-areas: 'icon content';
+  padding: var(--vuttr-spacing-special-modal-header);
   border-radius: var(--vuttr-border-radius-special);
   border: var(--vuttr-border-card);
   height: auto;
-  padding: var(--vuttr-spacing-special-modal-header);
-  background: var(--be-color-white);
+  width: var(--vuttr-size-toast-width);
   box-shadow: var(--vuttr-shadow-elevation-4);
+}
+
+.neutral {
+  grid-template-areas: 'content';
+}
+
+.typeIcon {
+  grid-area: icon;
+  margin-right: var(--vuttr-spacing-special-toast-type-icon-right);
+}
+
+.toast {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -14,7 +29,7 @@
   display: grid;
   grid-template-areas: 'title close';
   grid-template-columns: auto 12px;
-  padding-bottom: var(--vuttr-spacing-l);
+  padding-bottom: var(--vuttr-spacing-special-modal-header);
 }
 
 .title {
@@ -38,4 +53,73 @@
 
 .closeButton > span {
   margin-right: 0;
+}
+
+.content {
+  margin-bottom: var(--vuttr-spacing-special-toast-content-margin-bottom);
+  text-align: left;
+  line-height: 1.35;
+}
+
+.container.neutral {
+  background: var(--vuttr-color-white);
+}
+
+.neutral .content {
+  color: var(--vuttr-color-light-ink);
+}
+
+.container.warning {
+  background: var(--vuttr-color-yellow);
+}
+
+.warning .title,
+.warning .content,
+.error .title,
+.error .content,
+.success .title,
+.success .content,
+.info .title,
+.info .content {
+  color: var(--vuttr-color-white);
+}
+
+.warningButton {
+  background-color: var(--vuttr-color-lighter-yellow);
+  color: var(--vuttr-color-yellow);
+}
+
+.container.error {
+  background: var(--vuttr-color-red);
+}
+
+.errorButton {
+  background-color: var(--vuttr-color-most-lightest-red);
+  color: var(--vuttr-color-red);
+}
+
+.container.success {
+  background: var(--vuttr-color-green);
+}
+
+.successButton {
+  background-color: var(--vuttr-color-most-lightest-green);
+  color: var(--vuttr-color-green);
+}
+
+.container.info {
+  background: var(--vuttr-color-lighter-ink);
+}
+
+.infoButton {
+  background-color: var(--vuttr-color-darkest-white);
+  color: var(--vuttr-color-lighter-ink);
+}
+
+.warning svg path,
+.error svg path,
+.success svg path,
+.info svg path {
+  fill: var(--vuttr-color-white);
+  stroke: var(--vuttr-color-white);
 }
