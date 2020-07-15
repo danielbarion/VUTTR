@@ -105,9 +105,8 @@ export const AppStateProvider = ({ children }) => {
   }
 
   const removeToast = (id) => {
-    const updatedToastList = toastList.filter((toast) => toast.id !== id)
-
     toogleToast(id)
+    const updatedToastList = toastList.filter((toast) => toast.id !== id)
 
     setTimeout(() => {
       setToastList([...updatedToastList])
@@ -137,6 +136,14 @@ export const AppStateProvider = ({ children }) => {
     }
   }, [toastListAmount])
 
+  useEffect(() => {
+    if (toastList.length && toastList[0].showing === true) {
+      setTimeout(() => {
+        removeToast(toastList[0].id)
+      }, 3000)
+    }
+  }, [toastList])
+
   return (
     <AppContext.Provider
       value={{
@@ -150,6 +157,7 @@ export const AppStateProvider = ({ children }) => {
           searchInTagsOnly,
           modalTitle,
           toastList,
+          toastListAmount,
         },
         modalOpen,
         modalClose,

@@ -18,6 +18,7 @@ const HomePage = ({ context, toolsData }) => {
     modalOpen,
     modalClose,
     state,
+    addToast,
   } = context
   const { toolsList, isLoadingTools, searchInTagsOnly, searchQuerie } = state
 
@@ -39,6 +40,12 @@ const HomePage = ({ context, toolsData }) => {
   const handleFormSubmit = () => {
     modalClose()
     getToolsByQuerie()
+    addToast({
+      title: 'Success',
+      type: 'success',
+      showing: false,
+      content: 'Tool added into the list!',
+    })
   }
 
   const handleClickAdd = () => {
