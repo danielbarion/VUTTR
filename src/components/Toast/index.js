@@ -14,49 +14,73 @@ const icons = {
   info: 'Exclusion-7',
 }
 
-const Toast = ({ className, type, children, title, closeButtonClassName, contentClassName }) => (
-  <div
-    className={classNames(style.container, style[type], {
-      [style.neutral]: type === 'neutral',
-    })}
-  >
-    {type !== 'neutral' && (
-      <div className={style.typeIcon}>
-        <Icon size="m" icon={icons[type]} />
-      </div>
-    )}
-    <div className={classNames(style.toast, className)}>
-      <div className={style.header}>
-        <Typography className={style.title} variant="header4" element="div">
-          {title}
-        </Typography>
+const Toast = ({
+  className,
+  type,
+  children,
+  title,
+  closeButtonClassName,
+  contentClassName,
+  onClose,
+  onAction,
+  actionLabel,
+  showing,
+}) => {
+  const isNeutralType = type === 'neutral'
+  const containerClasses = classNames(style.container, style[type], {
+    [style.neutral]: isNeutralType,
+    [style.showing]: showing,
+  })
 
-        <Button
-          className={classNames(style.closeButton, closeButtonClassName)}
-          variant="quartiary"
-          icon="Icon-Close-2px"
-          iconSize="xs"
-          // onClick={onClose}
-        />
-      </div>
-      <Typography
-        className={classNames(style.content, contentClassName)}
-        variant="bodyS"
-        element="div"
-      >
-        {children}
-      </Typography>
-      <div className={style.footer}>
-        <Button label="This is a button" variant="tertiary" className={style[`${type}Button`]} />
+  return (
+    <div className={containerClasses}>
+      {type !== 'neutral' && (
+        <div className={style.typeIcon}>
+          <Icon size="m" icon={icons[type]} />
+        </div>
+      )}
+      <div className={classNames(style.toast, className)}>
+        <div className={style.header}>
+          <Typography className={style.title} variant="header4" element="div">
+            {title}
+          </Typography>
+
+          <Button
+            className={classNames(style.closeButton, closeButtonClassName)}
+            variant="quartiary"
+            icon="Icon-Close-2px"
+            iconSize="xs"
+            onClick={onClose}
+          />
+        </div>
+        <Typography
+          className={classNames(style.content, contentClassName, {
+            [style.hasAction]: Boolean(onAction),
+          })}
+          variant="bodyS"
+          element="div"
+        >
+          {children}
+        </Typography>
+        {onAction && (
+          <div className={style.footer}>
+            <Button
+              label={actionLabel}
+              variant="tertiary"
+              className={style[`${type}Button`]}
+              onClick={onAction}
+            />
+          </div>
+        )}
       </div>
     </div>
-  </div>
-)
+  )
+}
 
 Toast.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
-  type: PropTypes.oneOf(['neutral', 'success', 'warning', 'error', 'informational']),
+  type: PropTypes.oneOf(['neutral', 'success', 'warning', 'error', 'info']),
   children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -65,6 +89,10 @@ Toast.propTypes = {
   ]),
   contentClassName: PropTypes.string,
   closeButtonClassName: PropTypes.string,
+  onClose: PropTypes.func.isRequired,
+  onAction: PropTypes.func,
+  actionLabel: PropTypes.string,
+  showing: PropTypes.bool,
 }
 
 Toast.defaultProps = {
@@ -74,6 +102,9 @@ Toast.defaultProps = {
   children: null,
   contentClassName: null,
   closeButtonClassName: null,
+  onAction: null,
+  actionLabel: null,
+  showing: false,
 }
 
 export default Toast

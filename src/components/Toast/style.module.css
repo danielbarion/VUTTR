@@ -7,6 +7,21 @@
   height: auto;
   width: var(--vuttr-size-toast-width);
   box-shadow: var(--vuttr-shadow-elevation-4);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: var(--vuttr-depth-toast);
+  visibility: hidden;
+  opacity: 0;
+  margin-top: var(--vuttr-spacing-l);
+  margin-right: var(--vuttr-spacing-l);
+  transition: opacity 200ms ease, visibility 200ms ease, transform 200ms ease;
+}
+
+.showing {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
 }
 
 .neutral {
@@ -56,9 +71,12 @@
 }
 
 .content {
-  margin-bottom: var(--vuttr-spacing-special-toast-content-margin-bottom);
   text-align: left;
   line-height: 1.35;
+}
+
+.hasAction {
+  margin-bottom: var(--vuttr-spacing-special-toast-content-margin-bottom);
 }
 
 .container.neutral {

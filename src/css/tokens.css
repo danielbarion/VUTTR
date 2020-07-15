@@ -180,6 +180,7 @@ body {
   --vuttr-depth-base: 1;
   --vuttr-depth-sidebar-nav: 2;
   --vuttr-depth-modal: 3;
+  --vuttr-depth-toast: 4;
 
   /* general sizes */
   --vuttr-size-field: 50px;
