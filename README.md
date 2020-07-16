@@ -53,9 +53,9 @@ Accesss the `http://localhost:3000/` and have fun!
 
 ### Mobile
 
-![Mobile Home](https://i.imgur.com/xIQhMi1.png =250x500)
-![Mobile Add](https://i.imgur.com/2H1FtZ8.png =250x500)
-![Mobile Add Feedback](https://i.imgur.com/15UhTAy.png =250x500)
+![Mobile Home](https://i.imgur.com/xIQhMi1.png)
+![Mobile Add](https://i.imgur.com/2H1FtZ8.png)
+![Mobile Add Feedback](https://i.imgur.com/15UhTAy.png)
 
 ## SEO
 
