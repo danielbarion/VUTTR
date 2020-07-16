@@ -43,6 +43,8 @@ docker-compose up
 
 Accesss the `http://localhost:3000/` and have fun!
 
+Remember: you still need run the backend locally.
+
 ## Project
 
 ### Desktop
