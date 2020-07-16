@@ -7,7 +7,7 @@ import FieldTag from 'components/FieldTag'
 import { addTools } from 'utils/api'
 import style from './style.module.css'
 
-const FormAddTool = ({ className, onFormSuccess }) => {
+const FormAddTool = ({ className, onFormSuccess, onFormError }) => {
   const [toolTitleValue, setToolTitleValue] = useState('')
   const [toolLinkValue, setToolLinkValue] = useState('')
   const [toolDescriptionValue, setToolDescriptionValue] = useState('')
@@ -43,6 +43,8 @@ const FormAddTool = ({ className, onFormSuccess }) => {
 
     if (request.status === 201 && onFormSuccess) {
       onFormSuccess()
+    } else if (request.status !== 201 && onFormError) {
+      onFormError()
     }
   }
 
@@ -100,11 +102,13 @@ const FormAddTool = ({ className, onFormSuccess }) => {
 FormAddTool.propTypes = {
   className: PropTypes.string,
   onFormSuccess: PropTypes.func,
+  onFormError: PropTypes.func,
 }
 
 FormAddTool.defaultProps = {
   className: null,
   onFormSuccess: null,
+  onFormError: null,
 }
 
 export default FormAddTool

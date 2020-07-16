@@ -37,7 +37,7 @@ const HomePage = ({ context, toolsData }) => {
     }
   }, [isLoadingTools])
 
-  const handleFormSubmit = () => {
+  const handleFormSubmitSuccess = () => {
     modalClose()
     getToolsByQuerie()
     addToast({
@@ -47,9 +47,20 @@ const HomePage = ({ context, toolsData }) => {
       content: 'Tool added into the list!',
     })
   }
+  const handleFormSubmitError = () => {
+    addToast({
+      title: 'Error',
+      type: 'error',
+      showing: false,
+      content: 'Error when try add a new tool, can you try again in few moments please?',
+    })
+  }
 
   const handleClickAdd = () => {
-    modalOpen(<FormAddTool onFormSuccess={handleFormSubmit} />, 'Add new tool')
+    modalOpen(
+      <FormAddTool onFormSuccess={handleFormSubmitSuccess} onFormError={handleFormSubmitError} />,
+      'Add new tool',
+    )
   }
 
   const handleClickRemove = () => {
@@ -144,6 +155,7 @@ HomePage.propTypes = {
     getToolsByQuerie: PropTypes.func.isRequired,
     modalOpen: PropTypes.func.isRequired,
     modalClose: PropTypes.func.isRequired,
+    addToast: PropTypes.func.isRequired,
   }).isRequired,
 }
 
