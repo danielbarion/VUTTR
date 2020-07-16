@@ -146,3 +146,12 @@
   fill: var(--vuttr-color-white);
   stroke: var(--vuttr-color-white);
 }
+
+@media (max-width: 480px) {
+  .container {
+    margin: 0;
+    width: 100%;
+    bottom: 0;
+    top: unset;
+  }
+}
