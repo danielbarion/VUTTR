@@ -19,6 +19,18 @@ class Document extends NextDocument {
         "Very Usefull Tools to Remember, don't waste your time thinking, just write down the tool! Come See!",
       applicationCategory: 'Multimedia',
       sourceOrganization: 'localhost.com',
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5',
+        reviewCount: '65536',
+      },
+      offers: {
+        '@type': 'Offer',
+        availability: 'http://schema.org/InStock',
+        price: '99.99',
+        priceCurrency: 'USD',
+      },
+      operatingSystem: 'iOS',
     }
 
     return (
