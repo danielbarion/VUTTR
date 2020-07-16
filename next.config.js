@@ -26,7 +26,7 @@ module.exports = withOffline(
       return config
     },
     workboxOpts: {
-      swDest: process.env.NEXT_EXPORT ? 'service-worker.js' : 'static/service-worker.js',
+      // swDest: process.env.NEXT_EXPORT ? 'service-worker.js' : 'static/service-worker.js',
       runtimeCaching: [
         {
           urlPattern: /.png$/,
@@ -72,15 +72,15 @@ module.exports = withOffline(
         },
       ],
     },
-    experimental: {
-      async rewrites() {
-        return [
-          {
-            source: '/service-worker.js',
-            destination: '/_next/static/service-worker.js',
-          },
-        ]
-      },
-    },
+    // experimental: {
+    //   async rewrites() {
+    //     return [
+    //       {
+    //         source: '/service-worker.js',
+    //         destination: '/_next/static/service-worker.js',
+    //       },
+    //     ]
+    //   },
+    // },
   }),
 )
