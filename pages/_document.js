@@ -39,6 +39,10 @@ class Document extends NextDocument {
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#000000" />
           <meta httpEquiv="Content-Language" content="pt-br" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          />
           <link rel="icon" type="image/png" href="/static/img/favicon.png" />
           <script
             type="application/ld+json"

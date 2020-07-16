@@ -136,7 +136,7 @@ const HomePage = ({ context, toolsData }) => {
   }
 
   return (
-    <div>
+    <>
       <Head>
         <title>{title}</title>
         <meta name="twitter:card" content="summary" />
@@ -169,7 +169,7 @@ const HomePage = ({ context, toolsData }) => {
           onClickRemove={handleClickRemove}
         />
       </Container>
-    </div>
+    </>
   )
 }
 
