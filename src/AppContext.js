@@ -140,7 +140,7 @@ export const AppStateProvider = ({ children }) => {
     if (toastList.length && toastList[0].showing === true) {
       setTimeout(() => {
         removeToast(toastList[0].id)
-      }, 3000)
+      }, 3600)
     }
   }, [toastList])
 

@@ -1,0 +1,14 @@
+.removeToolDialogue {
+  /* empty */
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: calc(var(--vuttr-spacing-l) + var(--vuttr-spacing-l));
+}
+
+.confirmButton {
+  margin-left: var(--vuttr-spacing-l);
+}

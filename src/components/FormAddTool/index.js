@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import Button from 'components/Button'
 import FieldText from 'components/FieldText'
 import FieldTag from 'components/FieldTag'
-import { addTools } from 'utils/api'
+import { addTool } from 'utils/api'
 import style from './style.module.css'
 
 const FormAddTool = ({ className, onFormSuccess, onFormError }) => {
@@ -39,10 +39,11 @@ const FormAddTool = ({ className, onFormSuccess, onFormError }) => {
       tags: toolTags,
     }
 
-    const { request } = await addTools(data)
+    const { request } = await addTool(data)
 
     if (request.status === 201 && onFormSuccess) {
-      onFormSuccess()
+      const { response } = request
+      onFormSuccess(JSON.parse(response))
     } else if (request.status !== 201 && onFormError) {
       onFormError()
     }

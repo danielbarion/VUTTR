@@ -18,7 +18,9 @@ const CardsList = ({ className, toolsList, isLoading, onClickRemove }) => (
             <Card key={item.id} className={style.toolCard} type="1">
               <div className={style.header}>
                 <Typography variant="header4" className={style.title}>
-                  {item.title}
+                  <a href={item.link} title={item.title} target="_blank" rel="noreferrer">
+                    {item.title}
+                  </a>
                 </Typography>
                 <div className={style.remove}>
                   {onClickRemove && (
@@ -29,7 +31,7 @@ const CardsList = ({ className, toolsList, isLoading, onClickRemove }) => (
                       icon="Icon-Close-2px"
                       iconSize="xxs"
                       label="remove"
-                      onClick={onClickRemove}
+                      onClick={() => onClickRemove(item)}
                     />
                   )}
                 </div>

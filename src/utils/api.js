@@ -48,9 +48,18 @@ export const getTools = async (querie = '') =>
 /**
  * Add tools into API
  */
-export const addTools = async (data) =>
+export const addTool = async (data) =>
   request({
     url: '/tools',
     method: 'POST',
     data,
+  })
+
+/**
+ * Add tools into API
+ */
+export const removeTool = async (id) =>
+  request({
+    url: `/tools/${id}`,
+    method: 'DELETE',
   })

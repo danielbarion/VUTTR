@@ -69,6 +69,10 @@ App.propTypes = {
   pageProps: PropTypes.shape(),
   context: PropTypes.shape({
     setLastUrl: PropTypes.func,
+    modalClose: PropTypes.func,
+    state: PropTypes.shape({
+      modalOpened: PropTypes.bool,
+    }),
   }).isRequired,
 }
 

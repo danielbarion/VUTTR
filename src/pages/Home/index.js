@@ -7,7 +7,9 @@ import Container from 'components/Container'
 import FormAddTool from 'components/FormAddTool'
 import Header from 'components/Header'
 import HeaderActions from 'components/HeaderActions'
+import RemoveToolDialogue from 'components/RemoveToolDialogue'
 import highlight from 'utils/highlight'
+import { removeTool } from 'utils/api'
 import style from './style.module.css'
 
 const HomePage = ({ context, toolsData }) => {
@@ -37,15 +39,18 @@ const HomePage = ({ context, toolsData }) => {
     }
   }, [isLoadingTools])
 
-  const handleFormSubmitSuccess = () => {
+  const handleFormSubmitSuccess = (tool) => {
     modalClose()
-    getToolsByQuerie()
-    addToast({
-      title: 'Success',
-      type: 'success',
-      showing: false,
-      content: 'Tool added into the list!',
-    })
+    setToolsList([...toolsList, tool])
+
+    setTimeout(() => {
+      addToast({
+        title: 'Success',
+        type: 'success',
+        showing: false,
+        content: 'Tool added into the list!',
+      })
+    }, 200) // wait the modal animation before add toast
   }
   const handleFormSubmitError = () => {
     addToast({
@@ -63,8 +68,39 @@ const HomePage = ({ context, toolsData }) => {
     )
   }
 
-  const handleClickRemove = () => {
-    modalOpen(<CardsList toolsList={toolsList} isLoading={isLoadingTools} />, 'Remove Tool')
+  const handleRemoveTool = async (id) => {
+    const { request } = await removeTool(id)
+
+    if (request.status === 200) {
+      modalClose()
+
+      getToolsByQuerie()
+
+      setTimeout(() => {
+        addToast({
+          title: 'Success',
+          type: 'success',
+          showing: false,
+          content: 'Tool removed!',
+        })
+      }, 200) // wait the modal animation before add toast
+    } else {
+      addToast({
+        title: 'Error',
+        type: 'error',
+        showing: false,
+        content: 'Error when try remove the tool, can you try again in few moments please?',
+      })
+    }
+  }
+
+  const handleClickRemove = (tool) => {
+    const { name, id } = tool
+
+    modalOpen(
+      <RemoveToolDialogue toolName={name} onClick={() => handleRemoveTool(id)} />,
+      'Remove Tool',
+    )
   }
 
   /**
