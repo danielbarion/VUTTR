@@ -33,6 +33,16 @@ PS.2: We can build the backend directly in this project, but I'm using the bossa
 1. run `npm run dev`
 1. Have fun!
 
+## Docker
+
+You can run the project in docker:
+
+```
+docker-compose up
+```
+
+Accesss the `http://localhost:3000/` and have fun!
+
 ## Project
 
 ### Desktop
