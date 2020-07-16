@@ -6,6 +6,7 @@
   padding: var(--vuttr-spacing-l);
   margin-bottom: var(--vuttr-spacing-l);
   background-color: var(--vuttr-color-white);
+  max-width: calc(100% - (2 * var(--vuttr-spacing-l)));
 }
 
 .header {
@@ -36,10 +37,13 @@
 .description {
   margin-bottom: var(--vuttr-spacing-m);
   line-height: 1.35;
+  word-break: break-word;
 }
 
 .tags {
   display: flex;
+  flex-wrap: wrap;
+  line-height: 1.35;
 }
 
 .tag {

@@ -1,5 +1,5 @@
 .removeToolDialogue {
-  /* empty */
+  height: 100%;
 }
 
 .footer {
@@ -11,4 +11,16 @@
 
 .confirmButton {
   margin-left: var(--vuttr-spacing-l);
+}
+
+@media (max-width: 768px) {
+  .removeToolDialogue {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .footer {
+    justify-content: space-between;
+  }
 }

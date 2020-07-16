@@ -1,15 +1,24 @@
+.root {
+  overflow: auto;
+}
+
 .mainContent {
   display: flex;
   flex-direction: column;
+  padding: var(--vuttr-spacing-l);
 }
 
 .header {
-  padding-top: calc(var(--vuttr-spacing-xxl) + var(--vuttr-spacing-xl));
+  padding-top: var(--vuttr-spacing-s);
   margin-bottom: calc(var(--vuttr-spacing-xl) + var(--vuttr-spacing-m));
 }
 
-@media (max-width: 768px) {
+@media (min-width: 780px) {
   .mainContent {
-    padding: var(--vuttr-spacing-xxl);
+    padding: 0;
+  }
+
+  .header {
+    padding-top: calc(var(--vuttr-spacing-xxl) + var(--vuttr-spacing-xl));
   }
 }

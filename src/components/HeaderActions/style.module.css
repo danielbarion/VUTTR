@@ -1,19 +1,36 @@
 .headerActions {
   display: grid;
-  grid-template-areas: 'search tagsOnly addButton';
-  grid-template-columns: 260px auto 115px;
+  grid-template-areas:
+    'search search'
+    'tagsOnly addButton';
+  grid-template-columns: auto;
+  gap: var(--vuttr-spacing-l);
   align-items: center;
   padding-bottom: var(--vuttr-spacing-l);
 }
 
 .searchField {
+  grid-area: search;
   padding-bottom: 0;
 }
 
 .tagsCheckbox {
-  padding-left: var(--vuttr-spacing-s);
+  grid-area: tagsOnly;
 }
 
 .addIcon {
+  grid-area: addButton;
   transform: rotate(45deg);
+}
+
+@media (min-width: 768px) {
+  .headerActions {
+    grid-template-areas: 'search tagsOnly addButton';
+    grid-template-columns: 260px auto 115px;
+    gap: unset;
+  }
+
+  .tagsCheckbox {
+    padding-left: var(--vuttr-spacing-s);
+  }
 }
