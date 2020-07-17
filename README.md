@@ -16,15 +16,15 @@ The project was built with React and Next.js
 - Design System friendly
 - Wireframe friendly
 
-PS: the AMP version was not added but with next, we can have an AMP version of our website with no troubles.
-PS.2: We can build the backend directly in this project, but I'm using the bossabox challenge fake api.
+* PS: the AMP version was not added but with next, we can have an AMP version of our website with no troubles.
+* PS.2: We can build the backend directly in this project, but I'm using the bossabox challenge fake api.
 
 ## Demo
 
 1. Open the [Demo link](https://relaxed-khorana-454801.netlify.app/)
 1. Download the [challenge-fake-api](https://gitlab.com/bossabox/challenge-fake-api/tree/master)
 1. Run the backend `npx json-server d|512x397,json --port 3004` (Important: the frontend is configured to look into port 3004)
-1. The web app will connect into loc|512x397,host backend and let you test the project
+1. The web app will connect into localhost backend and let you test the project
 
 ## Installation
 
